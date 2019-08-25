@@ -6,23 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>iOS-autoreleasepoo | Hexo</title>
+  <title>AutoReleasePool探索 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="背景关于自动释放池，这个在第一次写iOS程序的时候，就能看到main.m中有@autoreleasepool字样。所以它到底是干什么的，内部结构怎样，又是通过什么机制释放的？这是这篇文章主要解答的几个问题。 1. autoreleasepool内部结构将mian.m文件编译为C++代码时候，可以看到起内部的实现是借助__AtAutoreleasePool进行实现，内部结构是Autorelease">
+  <meta name="description" content="背景关于自动释放池，这个在第一次写iOS程序的时候，就能看到main.m中有@autoreleasepool字样。所以它到底是干什么的，内部结构怎样，又是通过什么机制释放的？这是这篇文章主要解答的几个问题。 1. autoreleasepool内部结构将mian.m文件编译为C++代码时候，可以看到起内部的实现是借助__AtAutoreleasePool进行实现，内部结构是AutoreleaseP">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS-autoreleasepoo">
-<meta property="og:url" content="http://yoursite.com/2019/07/24/iOS-autoreleasepoo/index.html">
+<meta property="og:title" content="AutoReleasePool探索">
+<meta property="og:url" content="http://yoursite.com/2018/07/24/iOS-autoreleasepool/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="背景关于自动释放池，这个在第一次写iOS程序的时候，就能看到main.m中有@autoreleasepool字样。所以它到底是干什么的，内部结构怎样，又是通过什么机制释放的？这是这篇文章主要解答的几个问题。 1. autoreleasepool内部结构将mian.m文件编译为C++代码时候，可以看到起内部的实现是借助__AtAutoreleasePool进行实现，内部结构是Autorelease">
+<meta property="og:description" content="背景关于自动释放池，这个在第一次写iOS程序的时候，就能看到main.m中有@autoreleasepool字样。所以它到底是干什么的，内部结构怎样，又是通过什么机制释放的？这是这篇文章主要解答的几个问题。 1. autoreleasepool内部结构将mian.m文件编译为C++代码时候，可以看到起内部的实现是借助__AtAutoreleasePool进行实现，内部结构是AutoreleaseP">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/619522-859281860e098799.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/619522-7bdc612ac1fd26da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-08-25T08:04:24.437Z">
+<meta property="og:updated_time" content="2019-08-25T08:57:05.276Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS-autoreleasepoo">
-<meta name="twitter:description" content="背景关于自动释放池，这个在第一次写iOS程序的时候，就能看到main.m中有@autoreleasepool字样。所以它到底是干什么的，内部结构怎样，又是通过什么机制释放的？这是这篇文章主要解答的几个问题。 1. autoreleasepool内部结构将mian.m文件编译为C++代码时候，可以看到起内部的实现是借助__AtAutoreleasePool进行实现，内部结构是Autorelease">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/619522-859281860e098799.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="AutoReleasePool探索">
+<meta name="twitter:description" content="背景关于自动释放池，这个在第一次写iOS程序的时候，就能看到main.m中有@autoreleasepool字样。所以它到底是干什么的，内部结构怎样，又是通过什么机制释放的？这是这篇文章主要解答的几个问题。 1. autoreleasepool内部结构将mian.m文件编译为C++代码时候，可以看到起内部的实现是借助__AtAutoreleasePool进行实现，内部结构是AutoreleaseP">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/619522-7bdc612ac1fd26da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,20 +153,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-iOS-autoreleasepoo" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-iOS-autoreleasepool" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      iOS-autoreleasepoo
+      AutoReleasePool探索
     </h1>
   
 
         
-        <a href="/2019/07/24/iOS-autoreleasepoo/" class="archive-article-date">
-  	<time datetime="2019-07-23T16:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-24</time>
+        <a href="/2018/07/24/iOS-autoreleasepool/" class="archive-article-date">
+  	<time datetime="2018-07-23T16:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-24</time>
 </a>    
     
     
@@ -181,8 +180,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://upload-images.jianshu.io/upload_images/619522-859281860e098799.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="探索中"></p>
-<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>关于自动释放池，这个在第一次写iOS程序的时候，就能看到main.m中有<code>@autoreleasepool</code>字样。所以它到底是干什么的，内部结构怎样，又是通过什么机制释放的？这是这篇文章主要解答的几个问题。</p>
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>关于自动释放池，这个在第一次写iOS程序的时候，就能看到main.m中有<code>@autoreleasepool</code>字样。所以它到底是干什么的，内部结构怎样，又是通过什么机制释放的？这是这篇文章主要解答的几个问题。</p>
 <h5 id="1-autoreleasepool内部结构"><a href="#1-autoreleasepool内部结构" class="headerlink" title="1. autoreleasepool内部结构"></a>1. autoreleasepool内部结构</h5><p>将mian.m文件编译为C++代码时候，可以看到起内部的实现是借助__AtAutoreleasePool进行实现，内部结构是<code>AutoreleasePoolPage</code>，如下源码所示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> /*@autoreleasepool */ &#123; __AtAutoreleasePool __autoreleasepool; </span><br><span class="line">        return UIApplicationMain(argc, argv, __null, NSStringFromClass(((Class (*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass(&quot;AppDelegate&quot;), sel_registerName(&quot;class&quot;))));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">// -----</span><br><span class="line"></span><br><span class="line">extern &quot;C&quot; __declspec(dllimport) void * objc_autoreleasePoolPush(void);</span><br><span class="line">extern &quot;C&quot; __declspec(dllimport) void objc_autoreleasePoolPop(void *);</span><br><span class="line"></span><br><span class="line">struct __AtAutoreleasePool &#123;</span><br><span class="line">  __AtAutoreleasePool() &#123;atautoreleasepoolobj = objc_autoreleasePoolPush();&#125;</span><br><span class="line">  ~__AtAutoreleasePool() &#123;objc_autoreleasePoolPop(atautoreleasepoolobj);&#125;</span><br><span class="line">  void * atautoreleasepoolobj;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
@@ -227,8 +225,6 @@
 <hr>
 <ul>
 <li>demo基本在例子中有详细的说明，因此如果有谁需要代码，可以发我邮件。</li>
-<li>在阅读中，如果发现文章有不合理的地方，欢迎提出疑问至邮箱<a href="mailto::B12050217@163.com" target="_blank" rel="noopener">:B12050217@163.com</a>.</li>
-<li>原创文章，转载请注明：转自：<a href="https://www.jianshu.com/p/e7ce6a177648" target="_blank" rel="noopener">Try_Try_Try</a></li>
 <li>OK, game over.</li>
 </ul>
 <p>好了，以上内容就是简单的探索过程。</p>
@@ -302,7 +298,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/24/iOS-autoreleasepoo/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/24/iOS-autoreleasepool/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -374,7 +370,7 @@ if(true){
   	repo: 'dongpoRen.github.io',
   	owner: 'dongpoRen',
   	admin: ['dongpoRen'],
-  	id: 'Wed Jul 24 2019 00:05:00 GMT+0800',
+  	id: 'Tue Jul 24 2018 00:05:00 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
@@ -475,11 +471,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color4">kvc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -499,7 +499,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">kvc</a>
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -511,7 +511,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+                <a href="javascript:void(0)" class="js-tag color4">category</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -520,10 +520,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mj</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">category</a>
               </li>
             
             <div class="clearfix"></div>

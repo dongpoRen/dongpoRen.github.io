@@ -8,23 +8,22 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>KVC调用规则 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="背景关于KVC的使用方法，网络上已有很多文章介绍，这篇文章讲解的也很全面（https://www.jianshu.com/p/45cbd324ea65）。最近被问到了很多的问题，因此会将问到的问题都总结一下，方便之后查看。 很简单的一句话，描述一下kvc的get方法调用顺序？ 嗯哼，我伙呆，当时就火大。 吐槽一下：感觉记住这个顺序用处不太大，可能当时记住了，之后就又忘了。我其实是比较反感问一些需">
+  <meta name="description" content="背景关于KVC的使用方法，网络上已有很多文章介绍，这篇文章讲解的也很全面。最近被问到了很多的问题，因此会将问到的问题都总结一下，方便之后查看。 很简单的一句话，描述一下kvc的get方法调用顺序？ 嗯哼，我伙呆，当时就火大。 吐槽一下：感觉记住这个顺序用处不太大，可能当时记住了，之后就又忘了。我其实是比较反感问一些需要死记硬背，但是平时用处不太大的问题。如果当时有电脑，我直接可以进行演示操作，验证">
 <meta name="keywords" content="kvc">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KVC调用规则">
 <meta property="og:url" content="http://yoursite.com/2018/07/05/iOS-KVC/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="背景关于KVC的使用方法，网络上已有很多文章介绍，这篇文章讲解的也很全面（https://www.jianshu.com/p/45cbd324ea65）。最近被问到了很多的问题，因此会将问到的问题都总结一下，方便之后查看。 很简单的一句话，描述一下kvc的get方法调用顺序？ 嗯哼，我伙呆，当时就火大。 吐槽一下：感觉记住这个顺序用处不太大，可能当时记住了，之后就又忘了。我其实是比较反感问一些需">
+<meta property="og:description" content="背景关于KVC的使用方法，网络上已有很多文章介绍，这篇文章讲解的也很全面。最近被问到了很多的问题，因此会将问到的问题都总结一下，方便之后查看。 很简单的一句话，描述一下kvc的get方法调用顺序？ 嗯哼，我伙呆，当时就火大。 吐槽一下：感觉记住这个顺序用处不太大，可能当时记住了，之后就又忘了。我其实是比较反感问一些需要死记硬背，但是平时用处不太大的问题。如果当时有电脑，我直接可以进行演示操作，验证">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/619522-03fa19e41aa579a4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/619522-80a80f87feae2baf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/619522-df2cee40fb7c9fcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/619522-56fef02b3704950a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-08-25T08:03:52.227Z">
+<meta property="og:updated_time" content="2019-08-25T08:56:37.811Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="KVC调用规则">
-<meta name="twitter:description" content="背景关于KVC的使用方法，网络上已有很多文章介绍，这篇文章讲解的也很全面（https://www.jianshu.com/p/45cbd324ea65）。最近被问到了很多的问题，因此会将问到的问题都总结一下，方便之后查看。 很简单的一句话，描述一下kvc的get方法调用顺序？ 嗯哼，我伙呆，当时就火大。 吐槽一下：感觉记住这个顺序用处不太大，可能当时记住了，之后就又忘了。我其实是比较反感问一些需">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/619522-03fa19e41aa579a4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:description" content="背景关于KVC的使用方法，网络上已有很多文章介绍，这篇文章讲解的也很全面。最近被问到了很多的问题，因此会将问到的问题都总结一下，方便之后查看。 很简单的一句话，描述一下kvc的get方法调用顺序？ 嗯哼，我伙呆，当时就火大。 吐槽一下：感觉记住这个顺序用处不太大，可能当时记住了，之后就又忘了。我其实是比较反感问一些需要死记硬背，但是平时用处不太大的问题。如果当时有电脑，我直接可以进行演示操作，验证">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/619522-80a80f87feae2baf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -183,8 +182,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://upload-images.jianshu.io/upload_images/619522-03fa19e41aa579a4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="每一天"></p>
-<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>关于KVC的使用方法，网络上已有很多文章介绍，这篇文章讲解的也很全面（<a href="https://www.jianshu.com/p/45cbd324ea65）。最近被问到了很多的问题，因此会将问到的问题都总结一下，方便之后查看。" target="_blank" rel="noopener">https://www.jianshu.com/p/45cbd324ea65）。最近被问到了很多的问题，因此会将问到的问题都总结一下，方便之后查看。</a></p>
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>关于KVC的使用方法，网络上已有很多文章介绍，<a href="https://www.jianshu.com/p/45cbd324ea65" target="_blank" rel="noopener">这篇文章</a>讲解的也很全面。最近被问到了很多的问题，因此会将问到的问题都总结一下，方便之后查看。</p>
 <p><code>很简单的一句话，描述一下kvc的get方法调用顺序？</code></p>
 <p>嗯哼，我伙呆，当时就火大。</p>
 <p>吐槽一下：感觉记住这个顺序用处不太大，可能当时记住了，之后就又忘了。我其实是比较反感问一些需要死记硬背，但是平时用处不太大的问题。如果当时有电脑，我直接可以进行演示操作，验证推倒。我直接说了句：忘了（对面坐的神 笑了一下，我内心开始不淡定，摸了摸后脑勺和鼻子，低下了头。）</p>
@@ -360,11 +358,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/24/iOS-autoreleasepoo/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/24/iOS-autoreleasepool/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          iOS-autoreleasepoo
+          AutoReleasePool探索
         
       </div>
     </a>
@@ -519,11 +517,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color4">kvc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -543,7 +545,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">kvc</a>
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -555,7 +557,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+                <a href="javascript:void(0)" class="js-tag color4">category</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -564,10 +566,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mj</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">category</a>
               </li>
             
             <div class="clearfix"></div>

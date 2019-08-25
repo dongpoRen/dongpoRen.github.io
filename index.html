@@ -424,8 +424,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://upload-images.jianshu.io/upload_images/619522-307ffd16cf6302e1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="一天"></p>
-<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>写这篇文章主要有两个目的：</p>
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>写这篇文章主要有两个目的：</p>
 <ol>
 <li>虽然refresh的源码已经有很多小伙伴分析过了。但是其应用不能说不够广阔。所以，抽空重新梳理了一下该源码，然后记录一下自己的心得。方便之后重新阅读，然后对比更新。</li>
 <li>另一个问题是发现一个阅读源码的现象：比如源码有100个文件，当阅读了10个文件，就说我阅读过某某某框架的源码，然后看到源码中某某方法和另一方法实现一致，然后就直接调用同一个方法。但是此时就很容易出现问题。有时和你理论的时候，依旧意识不到问题所在，继续翻开源码说实现是一致的。可源码整体看一下，就能发现遇到的问题。最后一种情况将会分析这遇到的问题。</li>
@@ -501,20 +500,20 @@
 
 
   
-    <article id="post-iOS-autoreleasepoo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-iOS-autoreleasepool" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/24/iOS-autoreleasepoo/">iOS-autoreleasepoo</a>
+      <a class="article-title" href="/2018/07/24/iOS-autoreleasepool/">AutoReleasePool探索</a>
     </h1>
   
 
         
-        <a href="/2019/07/24/iOS-autoreleasepoo/" class="archive-article-date">
-  	<time datetime="2019-07-23T16:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-24</time>
+        <a href="/2018/07/24/iOS-autoreleasepool/" class="archive-article-date">
+  	<time datetime="2018-07-23T16:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-24</time>
 </a>    
     
     
@@ -524,12 +523,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://upload-images.jianshu.io/upload_images/619522-859281860e098799.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="探索中"></p>
-<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>关于自动释放池，这个在第一次写iOS程序的时候，就能看到main.m中有<code>@autoreleasepool</code>字样。所以它到底是干什么的，内部结构怎样，又是通过什么机制释放的？这是这篇文章主要解答的几个问题。</p>
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>关于自动释放池，这个在第一次写iOS程序的时候，就能看到main.m中有<code>@autoreleasepool</code>字样。所以它到底是干什么的，内部结构怎样，又是通过什么机制释放的？这是这篇文章主要解答的几个问题。</p>
 <h5 id="1-autoreleasepool内部结构"><a href="#1-autoreleasepool内部结构" class="headerlink" title="1. autoreleasepool内部结构"></a>1. autoreleasepool内部结构</h5><p>将mian.m文件编译为C++代码时候，可以看到起内部的实现是借助__AtAutoreleasePool进行实现，内部结构是<code>AutoreleasePoolPage</code>，如下源码所示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> /*@autoreleasepool */ &#123; __AtAutoreleasePool __autoreleasepool; </span><br><span class="line">        return UIApplicationMain(argc, argv, __null, NSStringFromClass(((Class (*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass(&quot;AppDelegate&quot;), sel_registerName(&quot;class&quot;))));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">// -----</span><br><span class="line"></span><br><span class="line">extern &quot;C&quot; __declspec(dllimport) void * objc_autoreleasePoolPush(void);</span><br><span class="line">extern &quot;C&quot; __declspec(dllimport) void objc_autoreleasePoolPop(void *);</span><br><span class="line"></span><br><span class="line">struct __AtAutoreleasePool &#123;</span><br><span class="line">  __AtAutoreleasePool() &#123;atautoreleasepoolobj = objc_autoreleasePoolPush();&#125;</span><br><span class="line">  ~__AtAutoreleasePool() &#123;objc_autoreleasePoolPop(atautoreleasepoolobj);&#125;</span><br><span class="line">  void * atautoreleasepoolobj;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2019/07/24/iOS-autoreleasepoo/#more">more >></a>
+          <a class="article-more-a" href="/2018/07/24/iOS-autoreleasepool/#more">more >></a>
         
       
 
@@ -602,8 +600,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://upload-images.jianshu.io/upload_images/619522-03fa19e41aa579a4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="每一天"></p>
-<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>关于KVC的使用方法，网络上已有很多文章介绍，这篇文章讲解的也很全面（<a href="https://www.jianshu.com/p/45cbd324ea65）。最近被问到了很多的问题，因此会将问到的问题都总结一下，方便之后查看。" target="_blank" rel="noopener">https://www.jianshu.com/p/45cbd324ea65）。最近被问到了很多的问题，因此会将问到的问题都总结一下，方便之后查看。</a></p>
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>关于KVC的使用方法，网络上已有很多文章介绍，<a href="https://www.jianshu.com/p/45cbd324ea65" target="_blank" rel="noopener">这篇文章</a>讲解的也很全面。最近被问到了很多的问题，因此会将问到的问题都总结一下，方便之后查看。</p>
 <p><code>很简单的一句话，描述一下kvc的get方法调用顺序？</code></p>
 <p>嗯哼，我伙呆，当时就火大。</p>
 <p>吐槽一下：感觉记住这个顺序用处不太大，可能当时记住了，之后就又忘了。我其实是比较反感问一些需要死记硬背，但是平时用处不太大的问题。如果当时有电脑，我直接可以进行演示操作，验证推倒。我直接说了句：忘了（对面坐的神 笑了一下，我内心开始不淡定，摸了摸后脑勺和鼻子，低下了头。）</p>
@@ -706,8 +703,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://upload-images.jianshu.io/upload_images/619522-91ada3c1ad724fd5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="哈哈,有点蒙"></p>
-<hr>
+        <hr>
 <h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><p>时间：2018.07.06<br>内容：添加几张结论图，使得结论更加的直观</p>
 <hr>
 <h3 id="背-吐-景-槽"><a href="#背-吐-景-槽" class="headerlink" title="背(吐)景(槽)"></a>背(吐)景(槽)</h3><p>最近被问到了一个category问题，把我问的晕头转向，当时就很(想)佩(打)服(人)，无疑是灰秃秃滚回去跪着搓板，面壁思过。</p>
@@ -790,8 +786,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://upload-images.jianshu.io/upload_images/619522-e6b98a3d85d5e10b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="我看世界"></p>
-<p>#1.获取Dispatch Queue 的两种方法</p>
+        <p>#1.获取Dispatch Queue 的两种方法</p>
 <ul>
 <li>方法一: 通过GCD api 生成队列<code>dispatch_queue_create</code><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 串行队列</span></span><br><span class="line">  dispatch_queue_t mySerialDispatchQueue = dispatch_queue_create(<span class="string">"com.example.gcd.MySerialDispatchQueue"</span>, <span class="type">NULL</span>);</span><br><span class="line">  dispatch_async(mySerialDispatchQueue, ^&#123;</span><br><span class="line">  &#125;);</span><br><span class="line">  dispatch_release(mySerialDispatchQueue);</span><br><span class="line">  </span><br><span class="line"> <span class="comment">// 并行队列</span></span><br><span class="line">  dispatch_queue_t myConcurrentDispatchQueue = dispatch_queue_create(<span class="string">"com.example.gcd.MyConcurrentDispatchQueue"</span>, <span class="type">DISPATCH_QUEUE_CONCURRENT</span>);</span><br><span class="line">  dispatch_async(myConcurrentDispatchQueue, ^&#123;</span><br><span class="line">      <span class="type">NSLog</span>(@<span class="string">"block on myConcurrentDispatchQueue"</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  dispatch_release(myConcurrentDispatchQueue);</span><br></pre></td></tr></table></figure>
 
@@ -871,8 +866,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://upload-images.jianshu.io/upload_images/619522-6a46f798069ff07c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="不负年华不负親"></p>
-<p><code>author:</code></p>
+        <p><code>author:</code></p>
 <p>OC中block的身影到处瞥见<br>但不知道你是否和我一样<br>开始动手时, 发现摸不到它的脾气<br>脑袋一空,眼睛圆溜的45°逆转<br>构她的形, 会她的意<br>依旧不见其身</p>
 <p>想到大学…<br>书上白净的指针一节<br>或许怕被难住,竟连老师也放了你鸽子<br>还好有我</p>
 <p>触摸你<br>皮肤也变得干涸<br>风也一直狠劲的吞并  打圈的眼眶<br>我保证, 定<br>不负年华 不负你.</p>
@@ -1022,11 +1016,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color4">kvc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1046,7 +1044,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">kvc</a>
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1058,7 +1056,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+                <a href="javascript:void(0)" class="js-tag color4">category</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1067,10 +1065,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mj</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">category</a>
               </li>
             
             <div class="clearfix"></div>

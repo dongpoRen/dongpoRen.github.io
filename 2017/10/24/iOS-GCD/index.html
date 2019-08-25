@@ -8,20 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>GCD基础知识 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#1.获取Dispatch Queue 的两种方法  方法一: 通过GCD api 生成队列dispatch_queue_create123456789101112// 串行队列  dispatch_queue_t mySerialDispatchQueue = dispatch_queue_create(&quot;com.example.gcd.MySerialDispatchQueue&quot;, NULL">
+  <meta name="description" content="#1.获取Dispatch Queue 的两种方法  方法一: 通过GCD api 生成队列dispatch_queue_create123456789101112// 串行队列  dispatch_queue_t mySerialDispatchQueue = dispatch_queue_create(&quot;com.example.gcd.MySerialDispatchQueue&quot;, NULL)">
 <meta name="keywords" content="GCD">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GCD基础知识">
 <meta property="og:url" content="http://yoursite.com/2017/10/24/iOS-GCD/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#1.获取Dispatch Queue 的两种方法  方法一: 通过GCD api 生成队列dispatch_queue_create123456789101112// 串行队列  dispatch_queue_t mySerialDispatchQueue = dispatch_queue_create(&quot;com.example.gcd.MySerialDispatchQueue&quot;, NULL">
+<meta property="og:description" content="#1.获取Dispatch Queue 的两种方法  方法一: 通过GCD api 生成队列dispatch_queue_create123456789101112// 串行队列  dispatch_queue_t mySerialDispatchQueue = dispatch_queue_create(&quot;com.example.gcd.MySerialDispatchQueue&quot;, NULL)">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/619522-e6b98a3d85d5e10b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-08-25T08:03:07.108Z">
+<meta property="og:updated_time" content="2019-08-25T08:55:20.856Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GCD基础知识">
-<meta name="twitter:description" content="#1.获取Dispatch Queue 的两种方法  方法一: 通过GCD api 生成队列dispatch_queue_create123456789101112// 串行队列  dispatch_queue_t mySerialDispatchQueue = dispatch_queue_create(&quot;com.example.gcd.MySerialDispatchQueue&quot;, NULL">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/619522-e6b98a3d85d5e10b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:description" content="#1.获取Dispatch Queue 的两种方法  方法一: 通过GCD api 生成队列dispatch_queue_create123456789101112// 串行队列  dispatch_queue_t mySerialDispatchQueue = dispatch_queue_create(&quot;com.example.gcd.MySerialDispatchQueue&quot;, NULL)">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -180,8 +178,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://upload-images.jianshu.io/upload_images/619522-e6b98a3d85d5e10b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="我看世界"></p>
-<p>#1.获取Dispatch Queue 的两种方法</p>
+        <p>#1.获取Dispatch Queue 的两种方法</p>
 <ul>
 <li>方法一: 通过GCD api 生成队列<code>dispatch_queue_create</code><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 串行队列</span></span><br><span class="line">  dispatch_queue_t mySerialDispatchQueue = dispatch_queue_create(<span class="string">"com.example.gcd.MySerialDispatchQueue"</span>, <span class="type">NULL</span>);</span><br><span class="line">  dispatch_async(mySerialDispatchQueue, ^&#123;</span><br><span class="line">  &#125;);</span><br><span class="line">  dispatch_release(mySerialDispatchQueue);</span><br><span class="line">  </span><br><span class="line"> <span class="comment">// 并行队列</span></span><br><span class="line">  dispatch_queue_t myConcurrentDispatchQueue = dispatch_queue_create(<span class="string">"com.example.gcd.MyConcurrentDispatchQueue"</span>, <span class="type">DISPATCH_QUEUE_CONCURRENT</span>);</span><br><span class="line">  dispatch_async(myConcurrentDispatchQueue, ^&#123;</span><br><span class="line">      <span class="type">NSLog</span>(@<span class="string">"block on myConcurrentDispatchQueue"</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  dispatch_release(myConcurrentDispatchQueue);</span><br></pre></td></tr></table></figure>
 
@@ -515,11 +512,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color4">kvc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -539,7 +540,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">kvc</a>
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -551,7 +552,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+                <a href="javascript:void(0)" class="js-tag color4">category</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -560,10 +561,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mj</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">category</a>
               </li>
             
             <div class="clearfix"></div>
