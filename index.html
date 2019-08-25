@@ -209,9 +209,701 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/23/hexo-github-build-personal-blog/">展开全文 >></a>
-        </p>
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-data-structure-tree" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/22/data-structure-tree/">数据结构-树</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/22/data-structure-tree/" class="archive-article-date">
+  	<time datetime="2019-08-22T08:18:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-22</time>
+</a>    
+    
+    
+     
+ 
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>这篇文章主要记录🌲的相关知识。最近又重新读了一遍数据结构的课本及相关读物，因此想记录一些基本的知识点。</p>
+<h3 id="1-树的表示法："><a href="#1-树的表示法：" class="headerlink" title="1. 树的表示法："></a>1. 树的表示法：</h3><ul>
+<li>双亲表示法</li>
+<li>孩子表示法</li>
+<li>孩子兄弟表示法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">typedef int DataType;</span><br><span class="line">typedef struct SNode</span><br><span class="line">&#123;</span><br><span class="line">	DataType data;</span><br><span class="line">	struct SNode *lchild, *rchild;</span><br><span class="line">&#125; SNode, * BiTree;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/2019/08/22/data-structure-tree/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-base-architecture-iOS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/21/base-architecture-iOS/">iOS中的基本架构</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/21/base-architecture-iOS/" class="archive-article-date">
+  	<time datetime="2019-08-21T03:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
+</a>    
+    
+    
+     
+ 
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><ul>
+<li>近期在网上翻阅了大量的资料去查找iOS中架构的相关文章，但文章很少，大部分都是java相关的。虽然平台语言不一致，思想总归相同的。然而从代码结构方面，应用到iOS平台仍旧感觉有点怪怪的。</li>
+<li>当然也在网上找到了相关iOS架构资料，但是文章谈到架构优化的点都有自己的思考，自己拿过来应用也很难去考虑整体。因此无不感叹他们好牛逼，就想去探索一下他们达到这种程度的前置知识。</li>
+<li>看到里边涉及到的点，就去找了相关的书籍进行翻阅学习。其中主要看了两本书：<code>HeadFirst 设计模式</code>，<code>App架构设计</code>。当再去看网上的其他文章、源码后，终于能够看透一些背后应用的思想。</li>
+<li>本文是关于 App架构设计 这本资料看完之后的总结，方便日后进行查看。</li>
+<li>HeadFirst 设计模式，也会在之后的文章中进行总结，方便日后的查看。</li>
+</ul>
+<hr>
+<p>本文按照自己的记忆点简单精简罗列一下本书中学习到的内容</p>
+        
+          <a class="article-more-a" href="/2019/08/21/base-architecture-iOS/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">架构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-source-code-mjrefresh-note" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/20/source-code-mjrefresh-note/">MJRefresh记录</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/20/source-code-mjrefresh-note/" class="archive-article-date">
+  	<time datetime="2019-08-20T06:58:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
+</a>    
+    
+    
+     
+ 
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://upload-images.jianshu.io/upload_images/619522-307ffd16cf6302e1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="一天"></p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>写这篇文章主要有两个目的：</p>
+<ol>
+<li>虽然refresh的源码已经有很多小伙伴分析过了。但是其应用不能说不够广阔。所以，抽空重新梳理了一下该源码，然后记录一下自己的心得。方便之后重新阅读，然后对比更新。</li>
+<li>另一个问题是发现一个阅读源码的现象：比如源码有100个文件，当阅读了10个文件，就说我阅读过某某某框架的源码，然后看到源码中某某方法和另一方法实现一致，然后就直接调用同一个方法。但是此时就很容易出现问题。有时和你理论的时候，依旧意识不到问题所在，继续翻开源码说实现是一致的。可源码整体看一下，就能发现遇到的问题。最后一种情况将会分析这遇到的问题。</li>
+</ol>
+<hr>
+<p>本文从以下几个方面进行记录：</p>
+<ul>
+<li>继承层次</li>
+<li>整体分析</li>
+<li>各类的职责</li>
+<li>下拉刷新<ul>
+<li>主动调用代码</li>
+<li>UI进行交互</li>
+</ul>
+</li>
+<li>上拉刷新</li>
+<li>常见的错误❌</li>
+</ul>
+<hr>
+<h4 id="一、基本类继承层次关系"><a href="#一、基本类继承层次关系" class="headerlink" title="一、基本类继承层次关系"></a>一、基本类继承层次关系</h4>
+        
+          <a class="article-more-a" href="/2019/08/20/source-code-mjrefresh-note/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">source</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mj</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-iOS-autoreleasepoo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/24/iOS-autoreleasepoo/">iOS-autoreleasepoo</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/24/iOS-autoreleasepoo/" class="archive-article-date">
+  	<time datetime="2019-07-23T16:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-24</time>
+</a>    
+    
+    
+     
+ 
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://upload-images.jianshu.io/upload_images/619522-859281860e098799.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="探索中"></p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>关于自动释放池，这个在第一次写iOS程序的时候，就能看到main.m中有<code>@autoreleasepool</code>字样。所以它到底是干什么的，内部结构怎样，又是通过什么机制释放的？这是这篇文章主要解答的几个问题。</p>
+<h5 id="1-autoreleasepool内部结构"><a href="#1-autoreleasepool内部结构" class="headerlink" title="1. autoreleasepool内部结构"></a>1. autoreleasepool内部结构</h5><p>将mian.m文件编译为C++代码时候，可以看到起内部的实现是借助__AtAutoreleasePool进行实现，内部结构是<code>AutoreleasePoolPage</code>，如下源码所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> /*@autoreleasepool */ &#123; __AtAutoreleasePool __autoreleasepool; </span><br><span class="line">        return UIApplicationMain(argc, argv, __null, NSStringFromClass(((Class (*)(id, SEL))(void *)objc_msgSend)((id)objc_getClass(&quot;AppDelegate&quot;), sel_registerName(&quot;class&quot;))));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">// -----</span><br><span class="line"></span><br><span class="line">extern &quot;C&quot; __declspec(dllimport) void * objc_autoreleasePoolPush(void);</span><br><span class="line">extern &quot;C&quot; __declspec(dllimport) void objc_autoreleasePoolPop(void *);</span><br><span class="line"></span><br><span class="line">struct __AtAutoreleasePool &#123;</span><br><span class="line">  __AtAutoreleasePool() &#123;atautoreleasepoolobj = objc_autoreleasePoolPush();&#125;</span><br><span class="line">  ~__AtAutoreleasePool() &#123;objc_autoreleasePoolPop(atautoreleasepoolobj);&#125;</span><br><span class="line">  void * atautoreleasepoolobj;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/07/24/iOS-autoreleasepoo/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-iOS-KVC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/05/iOS-KVC/">KVC调用规则</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/05/iOS-KVC/" class="archive-article-date">
+  	<time datetime="2018-07-05T09:13:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
+</a>    
+    
+    
+     
+ 
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://upload-images.jianshu.io/upload_images/619522-03fa19e41aa579a4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="每一天"></p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>关于KVC的使用方法，网络上已有很多文章介绍，这篇文章讲解的也很全面（<a href="https://www.jianshu.com/p/45cbd324ea65）。最近被问到了很多的问题，因此会将问到的问题都总结一下，方便之后查看。" target="_blank" rel="noopener">https://www.jianshu.com/p/45cbd324ea65）。最近被问到了很多的问题，因此会将问到的问题都总结一下，方便之后查看。</a></p>
+<p><code>很简单的一句话，描述一下kvc的get方法调用顺序？</code></p>
+<p>嗯哼，我伙呆，当时就火大。</p>
+<p>吐槽一下：感觉记住这个顺序用处不太大，可能当时记住了，之后就又忘了。我其实是比较反感问一些需要死记硬背，但是平时用处不太大的问题。如果当时有电脑，我直接可以进行演示操作，验证推倒。我直接说了句：忘了（对面坐的神 笑了一下，我内心开始不淡定，摸了摸后脑勺和鼻子，低下了头。）</p>
+<hr>
+<p>###目录结构：</p>
+<ul>
+<li><ol>
+<li>代码结构简介</li>
+</ol>
+<ul>
+<li>1.1 类结构</li>
+<li>1.2 代码展示</li>
+</ul>
+</li>
+<li><ol start="2">
+<li>KVC中get调用顺序</li>
+</ol>
+<ul>
+<li>2.1 观察图片总结结论</li>
+<li>2.2 验证</li>
+</ul>
+</li>
+<li><ol start="3">
+<li>KVC中set调用顺序</li>
+</ol>
+</li>
+</ul>
+<hr>
+        
+          <a class="article-more-a" href="/2018/07/05/iOS-KVC/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">kvc</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-iOS-category" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/28/iOS-category/">Category快快现真身</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/28/iOS-category/" class="archive-article-date">
+  	<time datetime="2018-06-28T11:15:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-28</time>
+</a>    
+    
+    
+     
+ 
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://upload-images.jianshu.io/upload_images/619522-91ada3c1ad724fd5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="哈哈,有点蒙"></p>
+<hr>
+<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><p>时间：2018.07.06<br>内容：添加几张结论图，使得结论更加的直观</p>
+<hr>
+<h3 id="背-吐-景-槽"><a href="#背-吐-景-槽" class="headerlink" title="背(吐)景(槽)"></a>背(吐)景(槽)</h3><p>最近被问到了一个category问题，把我问的晕头转向，当时就很(想)佩(打)服(人)，无疑是灰秃秃滚回去跪着搓板，面壁思过。</p>
+<p>把这一块知识恶狠狠的补了一桶，奶奶的，了解完之后，发现so easy，被自己蠢哭了。</p>
+<hr>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><p>网上也有相关的文章写的很好。我完全读下来的就是<code>美团</code>的那篇<a href="https://tech.meituan.com/DiveIntoCategory.html" target="_blank" rel="noopener">深入理解Objective-C：Category</a>。</p>
+<p>感觉写的很好。我写这篇文章时，对着读了好多遍。</p>
+<p>所以这次彻底对这篇文章分析一下（其实读很多遍，是因为写的很精简，内部的实现细节需要自己对照源码进行一一查看。这样才能把美团的这篇短短的文章读成一个体系，然后再进行精简，知识就变成我的了—想太多了可能）。</p>
+        
+          <a class="article-more-a" href="/2018/06/28/iOS-category/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">category</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-iOS-GCD" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/24/iOS-GCD/">GCD基础知识</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/24/iOS-GCD/" class="archive-article-date">
+  	<time datetime="2017-10-24T04:32:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-24</time>
+</a>    
+    
+    
+     
+ 
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://upload-images.jianshu.io/upload_images/619522-e6b98a3d85d5e10b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="我看世界"></p>
+<p>#1.获取Dispatch Queue 的两种方法</p>
+<ul>
+<li>方法一: 通过GCD api 生成队列<code>dispatch_queue_create</code><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 串行队列</span></span><br><span class="line">  dispatch_queue_t mySerialDispatchQueue = dispatch_queue_create(<span class="string">"com.example.gcd.MySerialDispatchQueue"</span>, <span class="type">NULL</span>);</span><br><span class="line">  dispatch_async(mySerialDispatchQueue, ^&#123;</span><br><span class="line">  &#125;);</span><br><span class="line">  dispatch_release(mySerialDispatchQueue);</span><br><span class="line">  </span><br><span class="line"> <span class="comment">// 并行队列</span></span><br><span class="line">  dispatch_queue_t myConcurrentDispatchQueue = dispatch_queue_create(<span class="string">"com.example.gcd.MyConcurrentDispatchQueue"</span>, <span class="type">DISPATCH_QUEUE_CONCURRENT</span>);</span><br><span class="line">  dispatch_async(myConcurrentDispatchQueue, ^&#123;</span><br><span class="line">      <span class="type">NSLog</span>(@<span class="string">"block on myConcurrentDispatchQueue"</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  dispatch_release(myConcurrentDispatchQueue);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/2017/10/24/iOS-GCD/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">GCD</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-iOS-pointer-block" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/19/iOS-pointer-block/">函数指针与block</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/19/iOS-pointer-block/" class="archive-article-date">
+  	<time datetime="2017-10-19T09:59:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-19</time>
+</a>    
+    
+    
+     
+ 
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://upload-images.jianshu.io/upload_images/619522-6a46f798069ff07c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="不负年华不负親"></p>
+<p><code>author:</code></p>
+<p>OC中block的身影到处瞥见<br>但不知道你是否和我一样<br>开始动手时, 发现摸不到它的脾气<br>脑袋一空,眼睛圆溜的45°逆转<br>构她的形, 会她的意<br>依旧不见其身</p>
+<p>想到大学…<br>书上白净的指针一节<br>或许怕被难住,竟连老师也放了你鸽子<br>还好有我</p>
+<p>触摸你<br>皮肤也变得干涸<br>风也一直狠劲的吞并  打圈的眼眶<br>我保证, 定<br>不负年华 不负你.</p>
+<p> 拿起C语言书,认真查看了一番,发现就是你.<br>我要认真的打量你,柔化你</p>
+        
+          <a class="article-more-a" href="/2017/10/19/iOS-pointer-block/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">指针</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">block</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
       
 
       
@@ -330,6 +1022,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -339,6 +1039,38 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">kvc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">指针</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">block</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">source</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mj</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">category</a>
               </li>
             
             <div class="clearfix"></div>
@@ -389,7 +1121,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">坚持向上&lt;br&gt;&lt;br&gt;记录生命的长度&lt;br&gt;一起感受</div>
   	  	
     	</section>
     

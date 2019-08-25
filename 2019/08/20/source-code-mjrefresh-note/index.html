@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo+GitHub部署个人blog | Hexo</title>
+  <title>MJRefresh记录 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装hexo 前置：安装好node，npm等。 切换到root用户： sudo su 安装镜像：npm install -g cnpm –registry=https://registry.npm.taobao.org 安装hexo框架：cnpm install -g hexo-cli">
-<meta name="keywords" content="hexo,github,blog">
+  <meta name="description" content="背景写这篇文章主要有两个目的：  虽然refresh的源码已经有很多小伙伴分析过了。但是其应用不能说不够广阔。所以，抽空重新梳理了一下该源码，然后记录一下自己的心得。方便之后重新阅读，然后对比更新。 另一个问题是发现一个阅读源码的现象：比如源码有100个文件，当阅读了10个文件，就说我阅读过某某某框架的源码，然后看到源码中某某方法和另一方法实现一致，然后就直接调用同一个方法。但是此时就很容易出现">
+<meta name="keywords" content="source,mj">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo+GitHub部署个人blog">
-<meta property="og:url" content="http://yoursite.com/2019/08/23/hexo-github-build-personal-blog/index.html">
+<meta property="og:title" content="MJRefresh记录">
+<meta property="og:url" content="http://yoursite.com/2019/08/20/source-code-mjrefresh-note/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="安装hexo 前置：安装好node，npm等。 切换到root用户： sudo su 安装镜像：npm install -g cnpm –registry=https://registry.npm.taobao.org 安装hexo框架：cnpm install -g hexo-cli">
+<meta property="og:description" content="背景写这篇文章主要有两个目的：  虽然refresh的源码已经有很多小伙伴分析过了。但是其应用不能说不够广阔。所以，抽空重新梳理了一下该源码，然后记录一下自己的心得。方便之后重新阅读，然后对比更新。 另一个问题是发现一个阅读源码的现象：比如源码有100个文件，当阅读了10个文件，就说我阅读过某某某框架的源码，然后看到源码中某某方法和另一方法实现一致，然后就直接调用同一个方法。但是此时就很容易出现">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-23T09:07:32.925Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/619522-307ffd16cf6302e1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-08-25T08:05:39.977Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo+GitHub部署个人blog">
-<meta name="twitter:description" content="安装hexo 前置：安装好node，npm等。 切换到root用户： sudo su 安装镜像：npm install -g cnpm –registry=https://registry.npm.taobao.org 安装hexo框架：cnpm install -g hexo-cli">
+<meta name="twitter:title" content="MJRefresh记录">
+<meta name="twitter:description" content="背景写这篇文章主要有两个目的：  虽然refresh的源码已经有很多小伙伴分析过了。但是其应用不能说不够广阔。所以，抽空重新梳理了一下该源码，然后记录一下自己的心得。方便之后重新阅读，然后对比更新。 另一个问题是发现一个阅读源码的现象：比如源码有100个文件，当阅读了10个文件，就说我阅读过某某某框架的源码，然后看到源码中某某方法和另一方法实现一致，然后就直接调用同一个方法。但是此时就很容易出现">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/619522-307ffd16cf6302e1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -151,20 +153,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hexo-github-build-personal-blog" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-source-code-mjrefresh-note" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo+GitHub部署个人blog
+      MJRefresh记录
     </h1>
   
 
         
-        <a href="/2019/08/23/hexo-github-build-personal-blog/" class="archive-article-date">
-  	<time datetime="2019-08-23T04:04:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-23</time>
+        <a href="/2019/08/20/source-code-mjrefresh-note/" class="archive-article-date">
+  	<time datetime="2019-08-20T06:58:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
 </a>    
     
     
@@ -178,43 +180,122 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><ol start="0">
-<li>前置：安装好node，npm等。</li>
-<li>切换到root用户： sudo su</li>
-<li>安装镜像：npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></li>
-<li>安装hexo框架：cnpm install -g hexo-cli</li>
+        <p><img src="https://upload-images.jianshu.io/upload_images/619522-307ffd16cf6302e1.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="一天"></p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>写这篇文章主要有两个目的：</p>
+<ol>
+<li>虽然refresh的源码已经有很多小伙伴分析过了。但是其应用不能说不够广阔。所以，抽空重新梳理了一下该源码，然后记录一下自己的心得。方便之后重新阅读，然后对比更新。</li>
+<li>另一个问题是发现一个阅读源码的现象：比如源码有100个文件，当阅读了10个文件，就说我阅读过某某某框架的源码，然后看到源码中某某方法和另一方法实现一致，然后就直接调用同一个方法。但是此时就很容易出现问题。有时和你理论的时候，依旧意识不到问题所在，继续翻开源码说实现是一致的。可源码整体看一下，就能发现遇到的问题。最后一种情况将会分析这遇到的问题。</li>
 </ol>
-<a id="more"></a>
+<hr>
+<p>本文从以下几个方面进行记录：</p>
+<ul>
+<li>继承层次</li>
+<li>整体分析</li>
+<li>各类的职责</li>
+<li>下拉刷新<ul>
+<li>主动调用代码</li>
+<li>UI进行交互</li>
+</ul>
+</li>
+<li>上拉刷新</li>
+<li>常见的错误❌</li>
+</ul>
+<hr>
+<h4 id="一、基本类继承层次关系"><a href="#一、基本类继承层次关系" class="headerlink" title="一、基本类继承层次关系"></a>一、基本类继承层次关系</h4><a id="more"></a>
 
-<h2 id="使用hexo"><a href="#使用hexo" class="headerlink" title="使用hexo"></a>使用hexo</h2><ol>
-<li>建立文件夹: mkdir blog</li>
-<li>初始化hexo: sudo hexo init</li>
-<li>开启服务hexo: hexo server (hexo s)</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 为了方便表示，使用~代替</span><br><span class="line">~ = MJRefresh</span><br><span class="line"></span><br><span class="line">~Component: UIView</span><br><span class="line">	~Header</span><br><span class="line">		~StateHeader</span><br><span class="line">			~NormalHeader</span><br><span class="line">			~GifHeader</span><br><span class="line">	~Footer</span><br><span class="line">		~AutoFooter</span><br><span class="line">			~AutoStateFooter</span><br><span class="line">				~AutoNormalFooter	</span><br><span class="line">				~AutoGifFooter</span><br><span class="line">		~BackFooter	</span><br><span class="line">			~BackStateFooter</span><br><span class="line">				~BackNormalFooter</span><br><span class="line">				~BackGifFooter</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="二、整体分析："><a href="#二、整体分析：" class="headerlink" title="二、整体分析："></a>二、整体分析：</h4><ol>
+<li>MJRefreshComponet是继承自UIView。其他所有的类都是其子类。</li>
+<li>mj_header和mj_footer是添加在ScrollView上分类的属性，其类型是<del>Header/</del>Footer类型，并且其添加到了scrollview的view容器内。因此在赋值后，才会出现在头部/尾部。</li>
+<li><code>通篇控制的方式，是通过子类重写其基类的MJRefreshState类型的state属性，重写其set方法进行更改当前刷新的状态。从而控制头部和尾部的展示内容（是否隐藏，内边距，偏移量等）。最终汇聚成看到的展示样貌。</code></li>
 </ol>
-<h2 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章:"></a>新建一篇文章:</h2><ol>
-<li>hexo n “我的第一篇博客文章”</li>
-<li>更改内容: vim </li>
-<li>清除一下缓存: hexo clean</li>
-<li>生成一下: hexo g</li>
-<li>本地查看一下: hexo s</li>
+<hr>
+<h4 id="三、各类的职责"><a href="#三、各类的职责" class="headerlink" title="三、各类的职责"></a>三、各类的职责</h4><p>要看清各个部件是如何进行逻辑的组织及代码的编写，得分清各个类的职责是什么，负责哪一模块，然后才能更好地理通整个源码的思想。</p>
+<ol>
+<li>~State模块主要处理状态：时间和不同状态的title</li>
+<li>~Normal模块主要处理：箭头的方向，是否显示及loadingView的是否显示。</li>
+<li>~Component基模块：主要暴露相应的接口，block供给子类进行组装及监听等的处理。</li>
+<li><del>Header 、</del>Footer模块：初始化的操作、设置frame的高度、scrollview的布局操作（inset, offset等）。</li>
 </ol>
-<h2 id="部署到远端github："><a href="#部署到远端github：" class="headerlink" title="部署到远端github："></a>部署到远端github：</h2><ol>
-<li>创建一个仓库：必须是：你的昵称/github.io</li>
-<li>安装部署插件：cnpm install –save hexo-deployer-git</li>
-<li>设置_config.yml中的Deployment中的<br>type: git<br>repo: 仓库地址<br>branch: master</li>
-<li>部署: hexo deploy (hexo d)</li>
-<li>可以查看 你的昵称/github.io网址，则可以看到你的博客。</li>
+<hr>
+<h4 id="四、Header"><a href="#四、Header" class="headerlink" title="四、Header"></a>四、Header</h4><p>下拉刷新刷新的方式有两种：一种是首次进入页面的时候，就主动触发代码刷新的操作，使其开始下拉刷新。另一种是手动下拉scrollview，进行的一系列UI操作及其给出的反馈。</p>
+<h6 id="主动调用代码进行的刷新操作"><a href="#主动调用代码进行的刷新操作" class="headerlink" title="主动调用代码进行的刷新操作"></a>主动调用代码进行的刷新操作</h6><p>调用流程：</p>
+<ul>
+<li><p>-[MJRefreshHeader beginRefreshing]</p>
+<ol>
+<li>setState:(refreshing)</li>
+<li>展示刷新样式(增加滚动区域，更新offest值为header的高度)</li>
+<li>执行block内部的刷新请求(executeRefreshingCallback)。</li>
+<li>当3中的请求回调操作执行完之后，当外部主动调用- endRefreshing时进行还原操作。</li>
 </ol>
-<h2 id="自定义主题："><a href="#自定义主题：" class="headerlink" title="自定义主题："></a>自定义主题：</h2><ol>
-<li>github.com/litten/hexo-theme-yilia</li>
-<li>下载主题：git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</li>
-<li>修改_config.yml的theme: yilia</li>
-<li>清除一下: hexo clean</li>
-<li>生成一下: hexo g</li>
-<li>查看一下: hexo s</li>
-<li>推到远端: hexo d (推送远端后，需要2min左右才能看到变化)</li>
+</li>
+<li><p>-[MJRefreshHeader endRefreshing]</p>
+<ol>
+<li>setState:(idle)</li>
+<li>恢复刷新样式,头部消失(更改inset为初始值)</li>
+<li>如果endrefreshing中有回调时就执行，没有就结束整个流程。</li>
 </ol>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://b23.tv/av44544186" target="_blank" rel="noopener">CodeSheep</a></p>
+</li>
+</ul>
+<hr>
+<h6 id="与UI进行交互出现的刷新操作"><a href="#与UI进行交互出现的刷新操作" class="headerlink" title="与UI进行交互出现的刷新操作"></a>与UI进行交互出现的刷新操作</h6><p>主要有通过下拉或者上滑出现的UI变动及刷新的逻辑等。后半部分是一致的。主要分析前半部分与UI进行交互，然后进行更新头部的动画的过程。</p>
+<p>以下拉刷新为例：(其中h为header的高度)</p>
+<ol>
+<li><p>当下拉scrollview时，触发其delegate方法：scrollViewContentOffsetDidChange:方法。</p>
+</li>
+<li><p>当drag == true 时，state状态一直在变化；</p>
+<ul>
+<li><p>下拉到临界值：<br>(state == idle &amp;&amp; offsetY &lt; -h)时 –&gt; state = pulling。此时状态文字要发生变化，箭头也要进行翻转。根据各类的职责去相应的类中更改即可。</p>
+</li>
+<li><p>上拉到临界值：<br>state == pulling &amp;&amp; offsetY &gt;= -h时，恢复state = idle。同时恢复箭头，文字等的状态。</p>
+</li>
+</ul>
+</li>
+<li><p>当drag == false &amp;&amp; state == pulling，即在拉过临界值，并且松手了，那么此之后执行的逻辑，就是下拉刷新过程。</p>
+</li>
+</ol>
+<hr>
+<h4 id="五、Footer"><a href="#五、Footer" class="headerlink" title="五、Footer"></a>五、Footer</h4><p>比Header包含的状态稍微多一点，但是和header的逻辑是类似的。<br>Footer分为Auto和Back两种状态</p>
+<ul>
+<li><p>联系：与header的比较，之前处理 <code>~Header</code>的逻辑现在迁移到了<del>AutoFooter和</del>BackFooter。</p>
+</li>
+<li><p>区别：<code>~BackFooter</code>的刷新是通过手动拖拽，并且在tableview的尾部最后进行展示的。而~AutoFooter的刷新操作，当上滑到最后一个cell时，将会自动进行刷新的操作。</p>
+</li>
+</ul>
+<p>对于footer通常不会去主动调用- beginRefresing该方法。他在设置好相应的初始位置后，就开始进行手动与UI<br>进行交互的上拉刷新操作：</p>
+<h6 id="BackFooter"><a href="#BackFooter" class="headerlink" title="~BackFooter:"></a>~BackFooter:</h6><ol>
+<li>footer的位置在屏幕的下方(无论是contentsize.height是否大于screensize.height).</li>
+<li>之后的操作就不再赘述，和下拉刷新的流程真的一模一样。(可以通过源码进行对照查看)</li>
+</ol>
+<h6 id="AutoFooter"><a href="#AutoFooter" class="headerlink" title="~AutoFooter:"></a>~AutoFooter:</h6><ol>
+<li>footer.y = contentsize.height + △ (其中△是一些inset信息).</li>
+<li>之后的刷新也和下拉是一致的内容.</li>
+</ol>
+<hr>
+<h4 id="六、常见的错误❌："><a href="#六、常见的错误❌：" class="headerlink" title="六、常见的错误❌："></a>六、常见的错误❌：</h4><ul>
+<li><p>问题出现点：在上拉刷新的时候，根据有没有更多数据，来更改state。</p>
+</li>
+<li><p>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">   if pullup &#123;</span><br><span class="line">       self.endFooterRefreshing(noMoreData: noMoreData)</span><br><span class="line">   &#125; </span><br><span class="line">else &#123;</span><br><span class="line">        self.tableView.mj_header.endRefreshing()</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   private func endFooterRefreshing(noMoreData: Bool) &#123;</span><br><span class="line">       if noMoreData &#123;</span><br><span class="line">           self.tableView.mj_footer.endRefreshingWithNoMoreData()</span><br><span class="line">       &#125; else &#123;</span><br><span class="line">           self.tableView.mj_footer.resetNoMoreData()</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>导致结果：当所有数据都加载完毕后，重新下拉刷新，然后上拉加载时，由于footer处于nomoredata状态，而无法加载其他页的数据。</p>
+</li>
+<li><p>分析：<br>从pullup代码来看，当上拉加载完所有数据后，将状态更新为了nomoredata状态。<br>当重新在该页面进行下拉刷新时，数据只加载page == 1 的数据，但是此时footer.state == nomoredata。<br>当要进行上拉加载page == 2 的数据时，由于state == nomoredata，在源码中就直接结束了整个刷新的操作.</p>
+</li>
+<li><p>源码：<br>scrollViewContentOffsetDidChange：</p>
+<p>~BackFooter：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 如果已全部加载，仅设置pullingPercent，然后返回</span><br><span class="line">if (self.state == MJRefreshStateNoMoreData) &#123;</span><br><span class="line">    self.pullingPercent = pullingPercent;</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>~AutoFooter：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (self.state != MJRefreshStateIdle </span><br><span class="line">    || !self.automaticallyRefresh </span><br><span class="line">    || self.mj_y == 0) </span><br><span class="line">  return;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解决方案：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">  if pullup &#123;</span><br><span class="line">      self.tableView.endFooterRefreshing(noMoreData: noMoreData)</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">      self.tableView.endHeaderRefreshing(noMoreData: noMoreData, count: newcount)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">// 给scrollview类进行扩展</span><br><span class="line">extension UIScrollView &#123;</span><br><span class="line">  </span><br><span class="line">  /// 尾部停止刷新</span><br><span class="line">  ///</span><br><span class="line">  /// - Parameter noMoreData: 下次刷新是否有新的数据</span><br><span class="line">  func endFooterRefreshing(noMoreData: Bool) &#123;</span><br><span class="line">      guard mj_footer != nil else &#123; return &#125;</span><br><span class="line">      if noMoreData &#123;</span><br><span class="line">          mj_footer.endRefreshingWithNoMoreData()</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">          footerEndRefreshing(action: nil)</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  /// 头部停止刷新</span><br><span class="line">  ///</span><br><span class="line">  /// - Parameter noMoreData: 下次刷新是否有新的数据</span><br><span class="line">  /// - count: 返回的结果个数</span><br><span class="line">  func endHeaderRefreshing(noMoreData: Bool, count: Int) &#123;</span><br><span class="line">      guard mj_header != nil else &#123; return &#125;</span><br><span class="line">      mj_header.endRefreshing()</span><br><span class="line">      updateFooterState(noMoreData: noMoreData, count: count)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  /// 根据首次刷新数据, 更新footer状态</span><br><span class="line">  ///</span><br><span class="line">  /// - Parameter noMoreData: 下次刷新是否有新的数据</span><br><span class="line">  /// - count: 返回的结果个数</span><br><span class="line">  private func updateFooterState(noMoreData: Bool, count: Int) &#123;</span><br><span class="line">      guard mj_footer != nil else &#123; return &#125;</span><br><span class="line">      if noMoreData &#123;</span><br><span class="line">          mj_footer.endRefreshingWithNoMoreData()</span><br><span class="line">          if count == 0 &#123;</span><br><span class="line">              mj_footer.isHidden = true</span><br><span class="line">          &#125;</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">          mj_footer.isHidden = false</span><br><span class="line">          mj_footer.resetNoMoreData()</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
 
       
 
@@ -228,15 +309,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">source</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mj</a>
         		</li>
       		
 		</ul>
@@ -292,7 +369,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/23/hexo-github-build-personal-blog/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/20/source-code-mjrefresh-note/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -306,9 +383,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/08/21/base-architecture-iOS/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          iOS中的基本架构
+        
+      </div>
+    </a>
   
-    <a href="/2019/08/22/data-structure-tree/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据结构-树</div>
+  
+    <a href="/2019/07/24/iOS-autoreleasepoo/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS-autoreleasepoo</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -335,7 +421,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装hexo"><span class="toc-number">1.</span> <span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用hexo"><span class="toc-number">2.</span> <span class="toc-text">使用hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新建一篇文章"><span class="toc-number">3.</span> <span class="toc-text">新建一篇文章:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署到远端github："><span class="toc-number">4.</span> <span class="toc-text">部署到远端github：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义主题："><span class="toc-number">5.</span> <span class="toc-text">自定义主题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">6.</span> <span class="toc-text">参考链接</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、基本类继承层次关系"><span class="toc-number">1.1.</span> <span class="toc-text">一、基本类继承层次关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、整体分析："><span class="toc-number">1.2.</span> <span class="toc-text">二、整体分析：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、各类的职责"><span class="toc-number">1.3.</span> <span class="toc-text">三、各类的职责</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四、Header"><span class="toc-number">1.4.</span> <span class="toc-text">四、Header</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#主动调用代码进行的刷新操作"><span class="toc-number">1.4.0.1.</span> <span class="toc-text">主动调用代码进行的刷新操作</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#与UI进行交互出现的刷新操作"><span class="toc-number">1.4.0.2.</span> <span class="toc-text">与UI进行交互出现的刷新操作</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五、Footer"><span class="toc-number">1.5.</span> <span class="toc-text">五、Footer</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#BackFooter"><span class="toc-number">1.5.0.1.</span> <span class="toc-text">~BackFooter:</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#AutoFooter"><span class="toc-number">1.5.0.2.</span> <span class="toc-text">~AutoFooter:</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#六、常见的错误❌："><span class="toc-number">1.6.</span> <span class="toc-text">六、常见的错误❌：</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -368,7 +454,7 @@ if(true){
   	repo: 'dongpoRen.github.io',
   	owner: 'dongpoRen',
   	admin: ['dongpoRen'],
-  	id: 'Fri Aug 23 2019 12:04:38 GMT+0800',
+  	id: 'Tue Aug 20 2019 14:58:00 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 

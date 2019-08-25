@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo+GitHub部署个人blog | Hexo</title>
+  <title>iOS中的基本架构 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装hexo 前置：安装好node，npm等。 切换到root用户： sudo su 安装镜像：npm install -g cnpm –registry=https://registry.npm.taobao.org 安装hexo框架：cnpm install -g hexo-cli">
-<meta name="keywords" content="hexo,github,blog">
+  <meta name="description" content="背景 近期在网上翻阅了大量的资料去查找iOS中架构的相关文章，但文章很少，大部分都是java相关的。虽然平台语言不一致，思想总归相同的。然而从代码结构方面，应用到iOS平台仍旧感觉有点怪怪的。 当然也在网上找到了相关iOS架构资料，但是文章谈到架构优化的点都有自己的思考，自己拿过来应用也很难去考虑整体。因此无不感叹他们好牛逼，就想去探索一下他们达到这种程度的前置知识。 看到里边涉及到的点，就去找了">
+<meta name="keywords" content="架构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo+GitHub部署个人blog">
-<meta property="og:url" content="http://yoursite.com/2019/08/23/hexo-github-build-personal-blog/index.html">
+<meta property="og:title" content="iOS中的基本架构">
+<meta property="og:url" content="http://yoursite.com/2019/08/21/base-architecture-iOS/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="安装hexo 前置：安装好node，npm等。 切换到root用户： sudo su 安装镜像：npm install -g cnpm –registry=https://registry.npm.taobao.org 安装hexo框架：cnpm install -g hexo-cli">
+<meta property="og:description" content="背景 近期在网上翻阅了大量的资料去查找iOS中架构的相关文章，但文章很少，大部分都是java相关的。虽然平台语言不一致，思想总归相同的。然而从代码结构方面，应用到iOS平台仍旧感觉有点怪怪的。 当然也在网上找到了相关iOS架构资料，但是文章谈到架构优化的点都有自己的思考，自己拿过来应用也很难去考虑整体。因此无不感叹他们好牛逼，就想去探索一下他们达到这种程度的前置知识。 看到里边涉及到的点，就去找了">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-23T09:07:32.925Z">
+<meta property="og:updated_time" content="2019-08-25T07:58:27.172Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo+GitHub部署个人blog">
-<meta name="twitter:description" content="安装hexo 前置：安装好node，npm等。 切换到root用户： sudo su 安装镜像：npm install -g cnpm –registry=https://registry.npm.taobao.org 安装hexo框架：cnpm install -g hexo-cli">
+<meta name="twitter:title" content="iOS中的基本架构">
+<meta name="twitter:description" content="背景 近期在网上翻阅了大量的资料去查找iOS中架构的相关文章，但文章很少，大部分都是java相关的。虽然平台语言不一致，思想总归相同的。然而从代码结构方面，应用到iOS平台仍旧感觉有点怪怪的。 当然也在网上找到了相关iOS架构资料，但是文章谈到架构优化的点都有自己的思考，自己拿过来应用也很难去考虑整体。因此无不感叹他们好牛逼，就想去探索一下他们达到这种程度的前置知识。 看到里边涉及到的点，就去找了">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -151,20 +151,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hexo-github-build-personal-blog" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-base-architecture-iOS" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo+GitHub部署个人blog
+      iOS中的基本架构
     </h1>
   
 
         
-        <a href="/2019/08/23/hexo-github-build-personal-blog/" class="archive-article-date">
-  	<time datetime="2019-08-23T04:04:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-23</time>
+        <a href="/2019/08/21/base-architecture-iOS/" class="archive-article-date">
+  	<time datetime="2019-08-21T03:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-21</time>
 </a>    
     
     
@@ -178,43 +178,50 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><ol start="0">
-<li>前置：安装好node，npm等。</li>
-<li>切换到root用户： sudo su</li>
-<li>安装镜像：npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></li>
-<li>安装hexo框架：cnpm install -g hexo-cli</li>
-</ol>
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><ul>
+<li>近期在网上翻阅了大量的资料去查找iOS中架构的相关文章，但文章很少，大部分都是java相关的。虽然平台语言不一致，思想总归相同的。然而从代码结构方面，应用到iOS平台仍旧感觉有点怪怪的。</li>
+<li>当然也在网上找到了相关iOS架构资料，但是文章谈到架构优化的点都有自己的思考，自己拿过来应用也很难去考虑整体。因此无不感叹他们好牛逼，就想去探索一下他们达到这种程度的前置知识。</li>
+<li>看到里边涉及到的点，就去找了相关的书籍进行翻阅学习。其中主要看了两本书：<code>HeadFirst 设计模式</code>，<code>App架构设计</code>。当再去看网上的其他文章、源码后，终于能够看透一些背后应用的思想。</li>
+<li>本文是关于 App架构设计 这本资料看完之后的总结，方便日后进行查看。</li>
+<li>HeadFirst 设计模式，也会在之后的文章中进行总结，方便日后的查看。</li>
+</ul>
+<hr>
+<p>本文按照自己的记忆点简单精简罗列一下本书中学习到的内容</p>
 <a id="more"></a>
 
-<h2 id="使用hexo"><a href="#使用hexo" class="headerlink" title="使用hexo"></a>使用hexo</h2><ol>
-<li>建立文件夹: mkdir blog</li>
-<li>初始化hexo: sudo hexo init</li>
-<li>开启服务hexo: hexo server (hexo s)</li>
+<h3 id="常见架构"><a href="#常见架构" class="headerlink" title="常见架构"></a>常见架构</h3><p>mvc:     <code>v -&gt; c -&gt; m</code><br>mvp:     <code>v -&gt; c -&gt; p -&gt; m</code><br>mvvm:     <code>v -&gt; c -&gt; vm -&gt; m</code><br>mvc+vs: <code>v -&gt; c -&gt; vs -&gt; m</code><br>可以看出：mvp，mvvm，mvcs都是在mvc的基础上进行扩展的。换句话说，他们是mvc的强化版本。</p>
+<p>以一个view上的button举例：</p>
+<h4 id="1-mvc"><a href="#1-mvc" class="headerlink" title="1. mvc"></a>1. mvc</h4><p><code>action: -&gt; v -&gt; c -&gt; m;
+         m -&gt; (notification) -&gt; c -&gt; (update) -&gt; v</code><br>network/other moudle：是从c开始进行触发，然后后续的执行流程和action一样的。</p>
+<ol>
+<li>c持有v和m。而v和m之间又是相互独立的模块。</li>
+<li>当点击v上button时，将点击方法传递到了c层进行响应；由于c拥有m，因此在c中调用更新m的方法；</li>
+<li>当m中的内容发生变化时，c作为m层数据发生变化的监听者。c会收到发生变化的通知，然后在c层开始相应的通知方法；由于c拥有v，则在通知的响应方法中，去调用v中的方法，从而v将会得到更新。<br>以下的几种模式，是从mvc演化而来，他们是在v和m中加入了自己的隔离层进行处理。</li>
 </ol>
-<h2 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章:"></a>新建一篇文章:</h2><ol>
-<li>hexo n “我的第一篇博客文章”</li>
-<li>更改内容: vim </li>
-<li>清除一下缓存: hexo clean</li>
-<li>生成一下: hexo g</li>
-<li>本地查看一下: hexo s</li>
+<h4 id="2-mvp"><a href="#2-mvp" class="headerlink" title="2. mvp:"></a>2. mvp:</h4><p><code>action: v -&gt; c(pro) -&gt; (action最终转发到p层) -&gt; p -&gt; m;
+        m -&gt; (notification) -&gt; p -&gt; (更新c层的属性) -&gt; c -&gt; v</code></p>
+<ol>
+<li>p层持有c层和m层。</li>
+<li>c层是遵循某个协议pro。而pro中暴露的接口是v要展示的内容</li>
 </ol>
-<h2 id="部署到远端github："><a href="#部署到远端github：" class="headerlink" title="部署到远端github："></a>部署到远端github：</h2><ol>
-<li>创建一个仓库：必须是：你的昵称/github.io</li>
-<li>安装部署插件：cnpm install –save hexo-deployer-git</li>
-<li>设置_config.yml中的Deployment中的<br>type: git<br>repo: 仓库地址<br>branch: master</li>
-<li>部署: hexo deploy (hexo d)</li>
-<li>可以查看 你的昵称/github.io网址，则可以看到你的博客。</li>
+<h4 id="3-mvvm"><a href="#3-mvvm" class="headerlink" title="3. mvvm"></a>3. mvvm</h4><p><code>action: -&gt; v -&gt; c -&gt; vm -&gt; (update) -&gt; m;
+         m -&gt; (notification1) -&gt; vm -&gt; (notification2) -&gt; c -&gt; (update) -&gt; v</code></p>
+<ol>
+<li>c持有v和vm。vm持有m。</li>
+<li>vm的模块将为v层提供展示逻辑逻辑的接口。</li>
+<li>c层时刻监听vm中暴露属性的通知变更。</li>
+<li>3也可以表述成：vm提供了变化的observable序列，供c层进行订阅，当subscribe到新的值后，c层进行更新v的数据。</li>
 </ol>
-<h2 id="自定义主题："><a href="#自定义主题：" class="headerlink" title="自定义主题："></a>自定义主题：</h2><ol>
-<li>github.com/litten/hexo-theme-yilia</li>
-<li>下载主题：git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</li>
-<li>修改_config.yml的theme: yilia</li>
-<li>清除一下: hexo clean</li>
-<li>生成一下: hexo g</li>
-<li>查看一下: hexo s</li>
-<li>推到远端: hexo d (推送远端后，需要2min左右才能看到变化)</li>
+<h4 id="4-mvc-vs"><a href="#4-mvc-vs" class="headerlink" title="4. mvc+vs"></a>4. mvc+vs</h4><ol>
+<li>viewstate中存储当前的状态信息</li>
+<li>在mvc的基础上，时刻保持v中的状态信息，那些信息当前并没有去更新model。</li>
+<li>将这些信息更新到viewstate中。</li>
+<li>在view触发时，去将vs中的值更新到model中。</li>
 </ol>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://b23.tv/av44544186" target="_blank" rel="noopener">CodeSheep</a></p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a href="https://github.com/objcio/app-architecture/tree/master/One-App-Eight-Architectures" target="_blank" rel="noopener">https://github.com/objcio/app-architecture/tree/master/One-App-Eight-Architectures</a></li>
+<li><a href="https://www.objc.io/books/app-architecture/" target="_blank" rel="noopener">App Architecture</a></li>
+</ul>
 
       
 
@@ -228,15 +235,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">架构</a>
         		</li>
       		
 		</ul>
@@ -292,7 +291,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/23/hexo-github-build-personal-blog/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/21/base-architecture-iOS/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -306,9 +305,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/08/22/data-structure-tree/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数据结构-树
+        
+      </div>
+    </a>
   
-    <a href="/2019/08/22/data-structure-tree/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据结构-树</div>
+  
+    <a href="/2019/08/20/source-code-mjrefresh-note/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MJRefresh记录</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -327,19 +335,6 @@
             </div>
         </div>
         
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装hexo"><span class="toc-number">1.</span> <span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用hexo"><span class="toc-number">2.</span> <span class="toc-text">使用hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新建一篇文章"><span class="toc-number">3.</span> <span class="toc-text">新建一篇文章:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署到远端github："><span class="toc-number">4.</span> <span class="toc-text">部署到远端github：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义主题："><span class="toc-number">5.</span> <span class="toc-text">自定义主题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">6.</span> <span class="toc-text">参考链接</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
         
     </div>
 </aside>
@@ -368,7 +363,7 @@ if(true){
   	repo: 'dongpoRen.github.io',
   	owner: 'dongpoRen',
   	admin: ['dongpoRen'],
-  	id: 'Fri Aug 23 2019 12:04:38 GMT+0800',
+  	id: 'Wed Aug 21 2019 11:36:00 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 

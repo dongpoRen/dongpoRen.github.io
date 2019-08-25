@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo+GitHub部署个人blog | Hexo</title>
+  <title>GCD基础知识 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装hexo 前置：安装好node，npm等。 切换到root用户： sudo su 安装镜像：npm install -g cnpm –registry=https://registry.npm.taobao.org 安装hexo框架：cnpm install -g hexo-cli">
-<meta name="keywords" content="hexo,github,blog">
+  <meta name="description" content="#1.获取Dispatch Queue 的两种方法  方法一: 通过GCD api 生成队列dispatch_queue_create123456789101112// 串行队列  dispatch_queue_t mySerialDispatchQueue = dispatch_queue_create(&quot;com.example.gcd.MySerialDispatchQueue&quot;, NULL">
+<meta name="keywords" content="GCD">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo+GitHub部署个人blog">
-<meta property="og:url" content="http://yoursite.com/2019/08/23/hexo-github-build-personal-blog/index.html">
+<meta property="og:title" content="GCD基础知识">
+<meta property="og:url" content="http://yoursite.com/2017/10/24/iOS-GCD/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="安装hexo 前置：安装好node，npm等。 切换到root用户： sudo su 安装镜像：npm install -g cnpm –registry=https://registry.npm.taobao.org 安装hexo框架：cnpm install -g hexo-cli">
+<meta property="og:description" content="#1.获取Dispatch Queue 的两种方法  方法一: 通过GCD api 生成队列dispatch_queue_create123456789101112// 串行队列  dispatch_queue_t mySerialDispatchQueue = dispatch_queue_create(&quot;com.example.gcd.MySerialDispatchQueue&quot;, NULL">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-23T09:07:32.925Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/619522-e6b98a3d85d5e10b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-08-25T08:03:07.108Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo+GitHub部署个人blog">
-<meta name="twitter:description" content="安装hexo 前置：安装好node，npm等。 切换到root用户： sudo su 安装镜像：npm install -g cnpm –registry=https://registry.npm.taobao.org 安装hexo框架：cnpm install -g hexo-cli">
+<meta name="twitter:title" content="GCD基础知识">
+<meta name="twitter:description" content="#1.获取Dispatch Queue 的两种方法  方法一: 通过GCD api 生成队列dispatch_queue_create123456789101112// 串行队列  dispatch_queue_t mySerialDispatchQueue = dispatch_queue_create(&quot;com.example.gcd.MySerialDispatchQueue&quot;, NULL">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/619522-e6b98a3d85d5e10b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -151,20 +153,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hexo-github-build-personal-blog" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-iOS-GCD" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo+GitHub部署个人blog
+      GCD基础知识
     </h1>
   
 
         
-        <a href="/2019/08/23/hexo-github-build-personal-blog/" class="archive-article-date">
-  	<time datetime="2019-08-23T04:04:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-23</time>
+        <a href="/2017/10/24/iOS-GCD/" class="archive-article-date">
+  	<time datetime="2017-10-24T04:32:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-24</time>
 </a>    
     
     
@@ -178,43 +180,99 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><ol start="0">
-<li>前置：安装好node，npm等。</li>
-<li>切换到root用户： sudo su</li>
-<li>安装镜像：npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></li>
-<li>安装hexo框架：cnpm install -g hexo-cli</li>
-</ol>
+        <p><img src="https://upload-images.jianshu.io/upload_images/619522-e6b98a3d85d5e10b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="我看世界"></p>
+<p>#1.获取Dispatch Queue 的两种方法</p>
+<ul>
+<li>方法一: 通过GCD api 生成队列<code>dispatch_queue_create</code><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 串行队列</span></span><br><span class="line">  dispatch_queue_t mySerialDispatchQueue = dispatch_queue_create(<span class="string">"com.example.gcd.MySerialDispatchQueue"</span>, <span class="type">NULL</span>);</span><br><span class="line">  dispatch_async(mySerialDispatchQueue, ^&#123;</span><br><span class="line">  &#125;);</span><br><span class="line">  dispatch_release(mySerialDispatchQueue);</span><br><span class="line">  </span><br><span class="line"> <span class="comment">// 并行队列</span></span><br><span class="line">  dispatch_queue_t myConcurrentDispatchQueue = dispatch_queue_create(<span class="string">"com.example.gcd.MyConcurrentDispatchQueue"</span>, <span class="type">DISPATCH_QUEUE_CONCURRENT</span>);</span><br><span class="line">  dispatch_async(myConcurrentDispatchQueue, ^&#123;</span><br><span class="line">      <span class="type">NSLog</span>(@<span class="string">"block on myConcurrentDispatchQueue"</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">  dispatch_release(myConcurrentDispatchQueue);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
 <a id="more"></a>
 
-<h2 id="使用hexo"><a href="#使用hexo" class="headerlink" title="使用hexo"></a>使用hexo</h2><ol>
-<li>建立文件夹: mkdir blog</li>
-<li>初始化hexo: sudo hexo init</li>
-<li>开启服务hexo: hexo server (hexo s)</li>
-</ol>
-<h2 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章:"></a>新建一篇文章:</h2><ol>
-<li>hexo n “我的第一篇博客文章”</li>
-<li>更改内容: vim </li>
-<li>清除一下缓存: hexo clean</li>
-<li>生成一下: hexo g</li>
-<li>本地查看一下: hexo s</li>
-</ol>
-<h2 id="部署到远端github："><a href="#部署到远端github：" class="headerlink" title="部署到远端github："></a>部署到远端github：</h2><ol>
-<li>创建一个仓库：必须是：你的昵称/github.io</li>
-<li>安装部署插件：cnpm install –save hexo-deployer-git</li>
-<li>设置_config.yml中的Deployment中的<br>type: git<br>repo: 仓库地址<br>branch: master</li>
-<li>部署: hexo deploy (hexo d)</li>
-<li>可以查看 你的昵称/github.io网址，则可以看到你的博客。</li>
-</ol>
-<h2 id="自定义主题："><a href="#自定义主题：" class="headerlink" title="自定义主题："></a>自定义主题：</h2><ol>
-<li>github.com/litten/hexo-theme-yilia</li>
-<li>下载主题：git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</li>
-<li>修改_config.yml的theme: yilia</li>
-<li>清除一下: hexo clean</li>
-<li>生成一下: hexo g</li>
-<li>查看一下: hexo s</li>
-<li>推到远端: hexo d (推送远端后，需要2min左右才能看到变化)</li>
-</ol>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://b23.tv/av44544186" target="_blank" rel="noopener">CodeSheep</a></p>
+<ul>
+<li>方法二: 获取系统标准提供的 Dispatch Queue<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 主队列   </span></span><br><span class="line">  dispatch_queue_t mainDispatchQueue =   dispatch_get_main_queue();</span><br><span class="line">  </span><br><span class="line"><span class="comment">// 全局并发队列(4种优先级)</span></span><br><span class="line">  dispatch_queue_t globalDispatchQueueHeigh = dispatch_get_global_queue(<span class="type">DISPATCH_QUEUE_PRIORITY_HIGH</span>, <span class="number">0</span>);</span><br><span class="line">  dispatch_queue_t globalDispatchQueueDefault = dispatch_get_global_queue(<span class="type">DISPATCH_QUEUE_PRIORITY_DEFAULT</span>, <span class="number">0</span>);</span><br><span class="line">  dispatch_queue_t globalDispatchQueueLow = dispatch_get_global_queue(<span class="type">DISPATCH_QUEUE_PRIORITY_LOW</span>, <span class="number">0</span>);</span><br><span class="line">  dispatch_queue_t globalDispatchQueueBackground = dispatch_get_global_queue(<span class="type">DISPATCH_QUEUE_PRIORITY_BACKGROUND</span>, <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>#2.延时操作</p>
+<ul>
+<li>3s后,将block追加到主队列中进行执行;<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dispatch_after(dispatch_time(<span class="type">DISPATCH_TIME_NOW</span>, (int64_t)(<span class="number">3</span> * <span class="type">NSEC_PER_SEC</span>)), dispatch_get_main_queue(), ^&#123;</span><br><span class="line">      </span><br><span class="line">      <span class="type">NSLog</span>(@<span class="string">"waited at least 3 seconds"</span>);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>#3.队列组</p>
+<ul>
+<li>在一系列操作完成之后,再执行其他内容<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">    dispatch_queue_t queue = dispatch_get_global_queue(<span class="type">DISPATCH_QUEUE_PRIORITY_DEFAULT</span>, <span class="number">0</span>);</span><br><span class="line">    </span><br><span class="line">    dispatch_group_t group = dispatch_group_create();</span><br><span class="line">    </span><br><span class="line">    dispatch_group_async(group, queue, ^&#123;</span><br><span class="line">        <span class="type">NSLog</span>(@<span class="string">"blk0"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    dispatch_group_async(group, queue, ^&#123;</span><br><span class="line">        <span class="type">NSLog</span>(@<span class="string">"blk1"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    dispatch_group_async(group, queue, ^&#123;</span><br><span class="line">        <span class="type">NSLog</span>(@<span class="string">"blk2"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 推荐</span></span><br><span class="line">    dispatch_group_notify(group, dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        <span class="type">NSLog</span>(@<span class="string">"done"</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 不推荐</span></span><br><span class="line">    dispatch_time_t time = dispatch_time(<span class="type">DISPATCH_TIME_NOW</span>, <span class="number">1</span>);</span><br><span class="line">    long result = dispatch_group_wait(group, time);</span><br><span class="line">    <span class="keyword">if</span> (result == <span class="number">0</span>) &#123; <span class="comment">// group 的全部处理执行结束</span></span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);</span></span><br><span class="line">    </span><br><span class="line">    dispatch_release(group);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>#4.栅栏函数</p>
+<ul>
+<li>用于读写操作引起的相关内容;</li>
+<li>每次的执行结果可能不一样,但是写操作一定会将0,1,2,3读操作和4,5,6,7分隔开,从而达到不会误读的效果<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">    dispatch_queue_t myConcurrentDispatchQueue = dispatch_queue_create(<span class="string">"com.example.gcd.MyConcurrentDispatchQueue"</span>, <span class="type">DISPATCH_QUEUE_CONCURRENT</span>);</span><br><span class="line">    </span><br><span class="line">    __block <span class="type">NSInteger</span> <span class="built_in">count</span> = <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    void (^blk0_for_reading)(void) = ^&#123;<span class="type">NSLog</span>(@<span class="string">"blk0_for_reading-%li%@"</span>, <span class="built_in">count</span>, [<span class="type">NSThread</span> currentThread]);&#125;;</span><br><span class="line">    void (^blk1_for_reading)(void) = ^&#123;<span class="type">NSLog</span>(@<span class="string">"blk1_for_reading-%li%@"</span>, <span class="built_in">count</span>, [<span class="type">NSThread</span> currentThread]);&#125;;</span><br><span class="line">    void (^blk2_for_reading)(void) = ^&#123;<span class="type">NSLog</span>(@<span class="string">"blk2_for_reading-%li%@"</span>, <span class="built_in">count</span>,[<span class="type">NSThread</span> currentThread]);&#125;;</span><br><span class="line">    void (^blk3_for_reading)(void) = ^&#123;<span class="type">NSLog</span>(@<span class="string">"blk3_for_reading-%li%@"</span>, <span class="built_in">count</span>,[<span class="type">NSThread</span> currentThread]);&#125;;</span><br><span class="line">    </span><br><span class="line">    void (^blk4_for_writing)(void) = ^&#123; ++<span class="built_in">count</span>; <span class="type">NSLog</span>(@<span class="string">"---------blk4_for_writing-%li%@"</span>, <span class="built_in">count</span>,[<span class="type">NSThread</span> currentThread]);&#125;;</span><br><span class="line">    </span><br><span class="line">    void (^blk5_for_reading)(void) = ^&#123;<span class="type">NSLog</span>(@<span class="string">"blk5_for_reading-%li%@"</span>, <span class="built_in">count</span>,[<span class="type">NSThread</span> currentThread]);&#125;;</span><br><span class="line">    void (^blk6_for_reading)(void) = ^&#123;<span class="type">NSLog</span>(@<span class="string">"blk6_for_reading-%li%@"</span>, <span class="built_in">count</span>,[<span class="type">NSThread</span> currentThread]);&#125;;</span><br><span class="line">    void (^blk7_for_reading)(void) = ^&#123;<span class="type">NSLog</span>(@<span class="string">"blk7_for_reading-%li%@"</span>, <span class="built_in">count</span>,[<span class="type">NSThread</span> currentThread]);&#125;;</span><br><span class="line">    void (^blk8_for_reading)(void) = ^&#123;<span class="type">NSLog</span>(@<span class="string">"blk8_for_reading-%li%@"</span>, <span class="built_in">count</span>,[<span class="type">NSThread</span> currentThread]);&#125;;</span><br><span class="line">    </span><br><span class="line">    dispatch_async(myConcurrentDispatchQueue, blk0_for_reading);</span><br><span class="line">    dispatch_async(myConcurrentDispatchQueue, blk1_for_reading);</span><br><span class="line">    dispatch_async(myConcurrentDispatchQueue, blk2_for_reading);</span><br><span class="line">    dispatch_async(myConcurrentDispatchQueue, blk3_for_reading);</span><br><span class="line">    </span><br><span class="line">    dispatch_barrier_async(myConcurrentDispatchQueue, blk4_for_writing);</span><br><span class="line">    </span><br><span class="line">    dispatch_async(myConcurrentDispatchQueue, blk5_for_reading);</span><br><span class="line">    dispatch_async(myConcurrentDispatchQueue, blk6_for_reading);</span><br><span class="line">    dispatch_async(myConcurrentDispatchQueue, blk7_for_reading);</span><br><span class="line">    dispatch_async(myConcurrentDispatchQueue, blk8_for_reading);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 结果</span></span><br><span class="line">blk1_for_reading-<span class="number">1</span>&lt;<span class="type">NSThread</span>: <span class="number">0x170272e80</span>&gt;&#123;number = <span class="number">5</span>, name = (null)&#125;</span><br><span class="line"><span class="number">2017</span>-<span class="number">10</span>-<span class="number">24</span> <span class="number">12</span>:<span class="number">21</span>:<span class="number">57.305030</span>+<span class="number">0800</span> <span class="type">Test_copy_mutableCopy</span>[<span class="number">1003</span>:<span class="number">610433</span>] blk0_for_reading-<span class="number">1</span>&lt;<span class="type">NSThread</span>: <span class="number">0x174073fc0</span>&gt;&#123;number = <span class="number">4</span>, name = (null)&#125;</span><br><span class="line"><span class="number">2017</span>-<span class="number">10</span>-<span class="number">24</span> <span class="number">12</span>:<span class="number">21</span>:<span class="number">57.305121</span>+<span class="number">0800</span> <span class="type">Test_copy_mutableCopy</span>[<span class="number">1003</span>:<span class="number">610433</span>] blk3_for_reading-<span class="number">1</span>&lt;<span class="type">NSThread</span>: <span class="number">0x174073fc0</span>&gt;&#123;number = <span class="number">4</span>, name = (null)&#125;</span><br><span class="line"><span class="number">2017</span>-<span class="number">10</span>-<span class="number">24</span> <span class="number">12</span>:<span class="number">21</span>:<span class="number">57.304973</span>+<span class="number">0800</span> <span class="type">Test_copy_mutableCopy</span>[<span class="number">1003</span>:<span class="number">610435</span>] blk2_for_reading-<span class="number">1</span>&lt;<span class="type">NSThread</span>: <span class="number">0x170272e80</span>&gt;&#123;number = <span class="number">5</span>, name = (null)&#125;</span><br><span class="line"><span class="number">2017</span>-<span class="number">10</span>-<span class="number">24</span> <span class="number">12</span>:<span class="number">21</span>:<span class="number">57.305301</span>+<span class="number">0800</span> <span class="type">Test_copy_mutableCopy</span>[<span class="number">1003</span>:<span class="number">610435</span>] ---------blk4_for_writing-<span class="number">2</span>&lt;<span class="type">NSThread</span>: <span class="number">0x170272e80</span>&gt;&#123;number = <span class="number">5</span>, name = (null)&#125;</span><br><span class="line"><span class="number">2017</span>-<span class="number">10</span>-<span class="number">24</span> <span class="number">12</span>:<span class="number">21</span>:<span class="number">57.305389</span>+<span class="number">0800</span> <span class="type">Test_copy_mutableCopy</span>[<span class="number">1003</span>:<span class="number">610435</span>] blk5_for_reading-<span class="number">2</span>&lt;<span class="type">NSThread</span>: <span class="number">0x170272e80</span>&gt;&#123;number = <span class="number">5</span>, name = (null)&#125;</span><br><span class="line"><span class="number">2017</span>-<span class="number">10</span>-<span class="number">24</span> <span class="number">12</span>:<span class="number">21</span>:<span class="number">57.305460</span>+<span class="number">0800</span> <span class="type">Test_copy_mutableCopy</span>[<span class="number">1003</span>:<span class="number">610435</span>] blk6_for_reading-<span class="number">2</span>&lt;<span class="type">NSThread</span>: <span class="number">0x170272e80</span>&gt;&#123;number = <span class="number">5</span>, name = (null)&#125;</span><br><span class="line"><span class="number">2017</span>-<span class="number">10</span>-<span class="number">24</span> <span class="number">12</span>:<span class="number">21</span>:<span class="number">57.305529</span>+<span class="number">0800</span> <span class="type">Test_copy_mutableCopy</span>[<span class="number">1003</span>:<span class="number">610435</span>] blk7_for_reading-<span class="number">2</span>&lt;<span class="type">NSThread</span>: <span class="number">0x170272e80</span>&gt;&#123;number = <span class="number">5</span>, name = (null)&#125;</span><br><span class="line"><span class="number">2017</span>-<span class="number">10</span>-<span class="number">24</span> <span class="number">12</span>:<span class="number">21</span>:<span class="number">57.305598</span>+<span class="number">0800</span> <span class="type">Test_copy_mutableCopy</span>[<span class="number">1003</span>:<span class="number">610433</span>] blk8_for_reading-<span class="number">2</span>&lt;<span class="type">NSThread</span>: <span class="number">0x174073fc0</span>&gt;&#123;number = <span class="number">4</span>, name = (null)&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>#5.死锁的产生<br>必然引起死锁的两种方式</p>
+<ul>
+<li><p>主队列 + 同步函数</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  <span class="type">NSInteger</span> <span class="built_in">count</span> = <span class="number">3</span>;</span><br><span class="line">  dispatch_queue_t mainQueue = dispatch_get_main_queue();</span><br><span class="line">  dispatch_sync(mainQueue, ^&#123;<span class="type">NSLog</span>(@<span class="string">"mainQueue-%li%@"</span>, <span class="built_in">count</span>,[<span class="type">NSThread</span> currentThread]);&#125;);</span><br><span class="line"><span class="comment">// result: 并没有出现结果,因为已经发生了死锁</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>串行队列 + 异步函数的block内部是(该串行队列 + 同步函数)(<code>将串行队列换成主队列依然成立</code>)</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dispatch_queue_t serialQueue = dispatch_queue_create(<span class="string">"com.nextapp.qiannong"</span>, <span class="type">NULL</span>);</span><br><span class="line">  dispatch_async(serialQueue, ^&#123;</span><br><span class="line">      dispatch_sync(serialQueue, ^&#123;<span class="type">NSLog</span>(@<span class="string">"no deadLock"</span>);&#125;);</span><br><span class="line">  &#125;);</span><br><span class="line"><span class="comment">// result: 并没有出现结果,因为已经发生了死锁</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>#6.dispatch_apply</p>
+<ul>
+<li><p>dispatch_apply 与dispatch_sync 函数类似(dispatch_group_async, dispatch_group_notify, dispatch_group_wait),会等待处理执行结束,在向下执行;</p>
+</li>
+<li><p>dispatch_group_async 没有执行次数的要求</p>
+</li>
+<li><p>dispatch_apply 必须有执行的次数</p>
+</li>
+<li><p>dispatch_barrier_async ,用于前后都有读取异步任务,中间有一个写操作</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 建议在dispatch_async中异步执行dispatch_apply函数</span></span><br><span class="line"></span><br><span class="line">  dispatch_async(globalQueue, ^&#123;</span><br><span class="line">      dispatch_apply(<span class="number">10</span>, globalQueue, ^(size_t index) &#123;</span><br><span class="line">          <span class="type">NSLog</span>(@<span class="string">"%li-%@"</span>, index,[<span class="type">NSThread</span> currentThread]);</span><br><span class="line">      &#125;);</span><br><span class="line">      dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">          <span class="comment">// 执行更新界面的操作</span></span><br><span class="line">          <span class="type">NSLog</span>(@<span class="string">"Done-%@"</span>, [<span class="type">NSThread</span> currentThread]);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 试验之后,并没有生效</span></span><br><span class="line">  dispatch_suspend(globalQueue); <span class="comment">// 挂起</span></span><br><span class="line">  dispatch_resume(globalQueue);  <span class="comment">// 恢复</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>#7.信号量机制相关</p>
+<ul>
+<li>相比串行队列 和 栅栏函数 ,力度更小;<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">dispatch_queue_t globalQueue = dispatch_get_global_queue(<span class="type">DISPATCH_QUEUE_PRIORITY_DEFAULT</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 保证可访问NSMutableArray类对象的线程只能有1个</span></span><br><span class="line">dispatch_semaphore_t semaphore = dispatch_semaphore_create(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="type">NSMutableArray</span> *array = [<span class="type">NSMutableArray</span> array];</span><br><span class="line"><span class="keyword">for</span> (int idx = <span class="number">0</span>; idx &lt; <span class="number">10000</span>; idx ++) &#123;</span><br><span class="line">    dispatch_async(globalQueue, ^&#123;</span><br><span class="line"> </span><br><span class="line">       <span class="comment">// 一直等到执行semaphore的是计数值&gt;=1.</span></span><br><span class="line">       <span class="comment">//          long result = dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);</span></span><br><span class="line">      <span class="comment">//            if (result == 0) &#123;</span></span><br><span class="line">      <span class="comment">//            &#125;else &#123;</span></span><br><span class="line">      <span class="comment">//            &#125;</span></span><br><span class="line">        </span><br><span class="line">        [array addObject:[<span class="type">NSNumber</span> numberWithInt:idx]];</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 执行结束之后,释放该锁, 将dsemaphore的值 + 1;</span></span><br><span class="line">        dispatch_semaphore_signal(semaphore);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">NSLog</span>(@<span class="string">"%@"</span>, array);</span><br><span class="line">dispatch_release(semaphore);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>#8.单例</p>
+<ul>
+<li>在程序中,只执行一次<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 之前的初始化操作</span></span><br><span class="line">  <span class="keyword">static</span> <span class="type">BOOL</span> initialized = <span class="type">NO</span>;</span><br><span class="line">  <span class="keyword">if</span> (initialized == <span class="type">NO</span>) &#123;</span><br><span class="line">      </span><br><span class="line">      <span class="comment">/*</span></span><br><span class="line"><span class="comment">       * 初始化操作</span></span><br><span class="line"><span class="comment">       */</span></span><br><span class="line">      </span><br><span class="line">      initialized = <span class="type">YES</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 多线程环境下更加的安全</span></span><br><span class="line">  <span class="keyword">static</span> dispatch_once_t onceToken;</span><br><span class="line">  dispatch_once(&amp;onceToken, ^&#123;</span><br><span class="line">      </span><br><span class="line">      <span class="comment">/*</span></span><br><span class="line"><span class="comment">       * 初始化操作</span></span><br><span class="line"><span class="comment">       */</span></span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>#9.简记</p>
+<p><strong>线程</strong></p>
+<ul>
+<li>dispatch_sync/async:同步/异步是否开启新线程</li>
+<li>异步不阻塞当前线程，同步阻塞当前线程</li>
+<li>serial/concurrent queue：串行/并行决定开启线程的条数</li>
+</ul>
+<p><strong>死锁</strong></p>
+<ul>
+<li>同步的在当前队列中(串行)中添加任务</li>
+<li>主队列也是串行队列</li>
+<li>相互阻塞构成死锁</li>
+</ul>
+<p><strong>信号量(semaphore)</strong></p>
+<ul>
+<li>信号量是同步的(同步会阻塞当前线程)</li>
+<li>semaphore.create(p): p &gt;= 0</li>
+<li>semaphore.wait(): p &lt;= 0, 阻塞当前线程， p -= 1</li>
+<li>semaphore.signal(): p += 1</li>
+</ul>
+<p><strong>group</strong></p>
+<ul>
+<li>实现多个网络的异步请求，最后再同步执行任务</li>
+<li>group.enter(), group.leave(), group.notify()</li>
+</ul>
 
       
 
@@ -228,15 +286,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">GCD</a>
         		</li>
       		
 		</ul>
@@ -292,7 +342,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/23/hexo-github-build-personal-blog/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/10/24/iOS-GCD/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -306,9 +356,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/06/28/iOS-category/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Category快快现真身
+        
+      </div>
+    </a>
   
-    <a href="/2019/08/22/data-structure-tree/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据结构-树</div>
+  
+    <a href="/2017/10/19/iOS-pointer-block/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">函数指针与block</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -327,19 +386,6 @@
             </div>
         </div>
         
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装hexo"><span class="toc-number">1.</span> <span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用hexo"><span class="toc-number">2.</span> <span class="toc-text">使用hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新建一篇文章"><span class="toc-number">3.</span> <span class="toc-text">新建一篇文章:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署到远端github："><span class="toc-number">4.</span> <span class="toc-text">部署到远端github：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义主题："><span class="toc-number">5.</span> <span class="toc-text">自定义主题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">6.</span> <span class="toc-text">参考链接</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
         
     </div>
 </aside>
@@ -368,7 +414,7 @@ if(true){
   	repo: 'dongpoRen.github.io',
   	owner: 'dongpoRen',
   	admin: ['dongpoRen'],
-  	id: 'Fri Aug 23 2019 12:04:38 GMT+0800',
+  	id: 'Tue Oct 24 2017 12:32:00 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 

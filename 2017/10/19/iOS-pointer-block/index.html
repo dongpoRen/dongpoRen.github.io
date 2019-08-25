@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo+GitHub部署个人blog | Hexo</title>
+  <title>函数指针与block | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装hexo 前置：安装好node，npm等。 切换到root用户： sudo su 安装镜像：npm install -g cnpm –registry=https://registry.npm.taobao.org 安装hexo框架：cnpm install -g hexo-cli">
-<meta name="keywords" content="hexo,github,blog">
+  <meta name="description" content="author: OC中block的身影到处瞥见但不知道你是否和我一样开始动手时, 发现摸不到它的脾气脑袋一空,眼睛圆溜的45°逆转构她的形, 会她的意依旧不见其身 想到大学…书上白净的指针一节或许怕被难住,竟连老师也放了你鸽子还好有我 触摸你皮肤也变得干涸风也一直狠劲的吞并  打圈的眼眶我保证, 定不负年华 不负你.  拿起C语言书,认真查看了一番,发现就是你.我要认真的打量你,柔化你">
+<meta name="keywords" content="指针,block">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo+GitHub部署个人blog">
-<meta property="og:url" content="http://yoursite.com/2019/08/23/hexo-github-build-personal-blog/index.html">
+<meta property="og:title" content="函数指针与block">
+<meta property="og:url" content="http://yoursite.com/2017/10/19/iOS-pointer-block/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="安装hexo 前置：安装好node，npm等。 切换到root用户： sudo su 安装镜像：npm install -g cnpm –registry=https://registry.npm.taobao.org 安装hexo框架：cnpm install -g hexo-cli">
+<meta property="og:description" content="author: OC中block的身影到处瞥见但不知道你是否和我一样开始动手时, 发现摸不到它的脾气脑袋一空,眼睛圆溜的45°逆转构她的形, 会她的意依旧不见其身 想到大学…书上白净的指针一节或许怕被难住,竟连老师也放了你鸽子还好有我 触摸你皮肤也变得干涸风也一直狠劲的吞并  打圈的眼眶我保证, 定不负年华 不负你.  拿起C语言书,认真查看了一番,发现就是你.我要认真的打量你,柔化你">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-23T09:07:32.925Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/619522-6a46f798069ff07c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-08-25T08:05:09.454Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo+GitHub部署个人blog">
-<meta name="twitter:description" content="安装hexo 前置：安装好node，npm等。 切换到root用户： sudo su 安装镜像：npm install -g cnpm –registry=https://registry.npm.taobao.org 安装hexo框架：cnpm install -g hexo-cli">
+<meta name="twitter:title" content="函数指针与block">
+<meta name="twitter:description" content="author: OC中block的身影到处瞥见但不知道你是否和我一样开始动手时, 发现摸不到它的脾气脑袋一空,眼睛圆溜的45°逆转构她的形, 会她的意依旧不见其身 想到大学…书上白净的指针一节或许怕被难住,竟连老师也放了你鸽子还好有我 触摸你皮肤也变得干涸风也一直狠劲的吞并  打圈的眼眶我保证, 定不负年华 不负你.  拿起C语言书,认真查看了一番,发现就是你.我要认真的打量你,柔化你">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/619522-6a46f798069ff07c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -151,20 +153,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hexo-github-build-personal-blog" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-iOS-pointer-block" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo+GitHub部署个人blog
+      函数指针与block
     </h1>
   
 
         
-        <a href="/2019/08/23/hexo-github-build-personal-blog/" class="archive-article-date">
-  	<time datetime="2019-08-23T04:04:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-23</time>
+        <a href="/2017/10/19/iOS-pointer-block/" class="archive-article-date">
+  	<time datetime="2017-10-19T09:59:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-19</time>
 </a>    
     
     
@@ -178,43 +180,42 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><ol start="0">
-<li>前置：安装好node，npm等。</li>
-<li>切换到root用户： sudo su</li>
-<li>安装镜像：npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></li>
-<li>安装hexo框架：cnpm install -g hexo-cli</li>
-</ol>
+        <p><img src="https://upload-images.jianshu.io/upload_images/619522-6a46f798069ff07c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="不负年华不负親"></p>
+<p><code>author:</code></p>
+<p>OC中block的身影到处瞥见<br>但不知道你是否和我一样<br>开始动手时, 发现摸不到它的脾气<br>脑袋一空,眼睛圆溜的45°逆转<br>构她的形, 会她的意<br>依旧不见其身</p>
+<p>想到大学…<br>书上白净的指针一节<br>或许怕被难住,竟连老师也放了你鸽子<br>还好有我</p>
+<p>触摸你<br>皮肤也变得干涸<br>风也一直狠劲的吞并  打圈的眼眶<br>我保证, 定<br>不负年华 不负你.</p>
+<p> 拿起C语言书,认真查看了一番,发现就是你.<br>我要认真的打量你,柔化你</p>
 <a id="more"></a>
 
-<h2 id="使用hexo"><a href="#使用hexo" class="headerlink" title="使用hexo"></a>使用hexo</h2><ol>
-<li>建立文件夹: mkdir blog</li>
-<li>初始化hexo: sudo hexo init</li>
-<li>开启服务hexo: hexo server (hexo s)</li>
-</ol>
-<h2 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章:"></a>新建一篇文章:</h2><ol>
-<li>hexo n “我的第一篇博客文章”</li>
-<li>更改内容: vim </li>
-<li>清除一下缓存: hexo clean</li>
-<li>生成一下: hexo g</li>
-<li>本地查看一下: hexo s</li>
-</ol>
-<h2 id="部署到远端github："><a href="#部署到远端github：" class="headerlink" title="部署到远端github："></a>部署到远端github：</h2><ol>
-<li>创建一个仓库：必须是：你的昵称/github.io</li>
-<li>安装部署插件：cnpm install –save hexo-deployer-git</li>
-<li>设置_config.yml中的Deployment中的<br>type: git<br>repo: 仓库地址<br>branch: master</li>
-<li>部署: hexo deploy (hexo d)</li>
-<li>可以查看 你的昵称/github.io网址，则可以看到你的博客。</li>
-</ol>
-<h2 id="自定义主题："><a href="#自定义主题：" class="headerlink" title="自定义主题："></a>自定义主题：</h2><ol>
-<li>github.com/litten/hexo-theme-yilia</li>
-<li>下载主题：git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</li>
-<li>修改_config.yml的theme: yilia</li>
-<li>清除一下: hexo clean</li>
-<li>生成一下: hexo g</li>
-<li>查看一下: hexo s</li>
-<li>推到远端: hexo d (推送远端后，需要2min左右才能看到变化)</li>
-</ol>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://b23.tv/av44544186" target="_blank" rel="noopener">CodeSheep</a></p>
+<hr>
+<ul>
+<li><p>#1. 给普通的指针赋值</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int projectCount = 1;</span><br><span class="line">int *intPtr = &amp;projectCount;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>#2. 函数的名称就是函数的地址</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int func(int count)</span><br><span class="line">&#123;</span><br><span class="line">  return count * 2;</span><br><span class="line">&#125;</span><br><span class="line">int (*funcPtr)(int) = func;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>#3. 函数的参数是: 指向函数的指针</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">typedef int (*blk_c)(int);</span><br><span class="line"></span><br><span class="line">// 3.1 直接方式</span><br><span class="line">int func_para_c (int (*blk_c)(int))</span><br><span class="line">&#123;</span><br><span class="line">    return 3;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 3.1 间接方式</span><br><span class="line">int func_para_c_d (blk_c blk)</span><br><span class="line">&#123;</span><br><span class="line">    return 3;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>#4. 函数的参数是: block</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">   typedef int (^blk_t)(int); // 定义block变量</span><br><span class="line"></span><br><span class="line">// 4.1 直接方式</span><br><span class="line">  int func1(int (^blk)(int))</span><br><span class="line">  &#123;</span><br><span class="line">      return 3;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">// 4.1 间接方式</span><br><span class="line">int func11(blk_t blk)</span><br><span class="line">&#123;</span><br><span class="line">      return 3;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>#5. 函数的返回值是: 指向函数的指针</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  // 5.1 直接方式</span><br><span class="line">int (*func_ret_c())(int) // 其中func_ret_c()是整个函数的骨架.</span><br><span class="line">&#123;</span><br><span class="line">      int (*funcPtr)(int) = func;</span><br><span class="line">      return funcPtr;</span><br><span class="line">  //    return func; 也可以直接返回函数的名称作为地址</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 5.2 间接方式</span><br><span class="line">blk_c func_ret_c_d()</span><br><span class="line">&#123;</span><br><span class="line">      return func;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>#6. 函数的返回值是: block</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">    // 6.1 直接方式</span><br><span class="line">int (^func_ret_t())(int)</span><br><span class="line">&#123;</span><br><span class="line">    return ^(int count)&#123;return count * 2 ;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 6.2 间接方式</span><br><span class="line">blk_t func_ret_t_d()</span><br><span class="line">&#123;</span><br><span class="line">      blk_t blV = ^(int count)&#123;return count * 2 ;&#125;;</span><br><span class="line">      return blV;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<p><code>ta</code></p>
+<p>这么多年了<br>还是要和我比来比去<br>我看到你的文章,并没有给过多的解释</p>
+<p>上学也是这样,<br>每当我们在操场上嘴角乱飞<br>每次都是你用手将我的头拨像你的肩膀<br>额头刚好蹭到你的脖颈<br>上边青筋的跳动也一度顺着我的额头<br>跟着你的呼吸引起的身体浮动<br>慢慢跳动<br>此刻我分明能听到你的❤️扑通扑通跳动着<br>周围都是你</p>
+<p>毕业好久了<br>你在哪<br>我找你好久</p>
+<p>年华已过,<br>我…</p>
 
       
 
@@ -228,15 +229,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">指针</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">block</a>
         		</li>
       		
 		</ul>
@@ -292,7 +289,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/23/hexo-github-build-personal-blog/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/10/19/iOS-pointer-block/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -306,11 +303,15 @@
   
 <nav id="article-nav">
   
-  
-    <a href="/2019/08/22/data-structure-tree/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据结构-树</div>
-      <i class="icon-circle-right"></i>
+    <a href="/2017/10/24/iOS-GCD/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          GCD基础知识
+        
+      </div>
     </a>
+  
   
 </nav>
 
@@ -327,19 +328,6 @@
             </div>
         </div>
         
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装hexo"><span class="toc-number">1.</span> <span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用hexo"><span class="toc-number">2.</span> <span class="toc-text">使用hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新建一篇文章"><span class="toc-number">3.</span> <span class="toc-text">新建一篇文章:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署到远端github："><span class="toc-number">4.</span> <span class="toc-text">部署到远端github：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义主题："><span class="toc-number">5.</span> <span class="toc-text">自定义主题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">6.</span> <span class="toc-text">参考链接</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
         
     </div>
 </aside>
@@ -368,7 +356,7 @@ if(true){
   	repo: 'dongpoRen.github.io',
   	owner: 'dongpoRen',
   	admin: ['dongpoRen'],
-  	id: 'Fri Aug 23 2019 12:04:38 GMT+0800',
+  	id: 'Thu Oct 19 2017 17:59:00 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
