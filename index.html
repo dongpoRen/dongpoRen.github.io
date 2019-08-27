@@ -148,6 +148,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-C-Grammer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/27/C-Grammer/">C++常用语法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/27/C-Grammer/" class="archive-article-date">
+  	<time datetime="2019-08-27T08:57:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-27</time>
+</a>    
+    
+    
+     
+ 
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>C++是C的一个超集。任何合法的C程序都是合法的C++程序。</p>
+<h2 id="字符串："><a href="#字符串：" class="headerlink" title="字符串："></a>字符串：</h2><p>C++ 提供了两种类型字符串表示形式：</p>
+<ul>
+<li>C风格字符串    (#include &lt;cstring&gt;)</li>
+<li>C++引入的string类型 (#include &lt;string&gt;)</li>
+</ul>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/27/C-Grammer/">查看更多 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Design-Patterns-Diagram" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -755,111 +837,6 @@
 
 
   
-    <article id="post-iOS-KVC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/05/iOS-KVC/">KVC调用规则</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/05/iOS-KVC/" class="archive-article-date">
-  	<time datetime="2018-07-05T09:13:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
-</a>    
-    
-    
-     
- 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>关于KVC的使用方法，网络上已有很多文章介绍，<a href="https://www.jianshu.com/p/45cbd324ea65" target="_blank" rel="noopener">这篇文章</a>讲解的也很全面。最近被问到了很多的问题，因此会将问到的问题都总结一下，方便之后查看。</p>
-<p><code>很简单的一句话，描述一下kvc的get方法调用顺序？</code></p>
-<p>嗯哼，我伙呆，当时就火大。</p>
-<p>吐槽一下：感觉记住这个顺序用处不太大，可能当时记住了，之后就又忘了。我其实是比较反感问一些需要死记硬背，但是平时用处不太大的问题。如果当时有电脑，我直接可以进行演示操作，验证推倒。我直接说了句：忘了（对面坐的神 笑了一下，我内心开始不淡定，摸了摸后脑勺和鼻子，低下了头。）</p>
-<hr>
-<p>###目录结构：</p>
-<ul>
-<li><ol>
-<li>代码结构简介</li>
-</ol>
-<ul>
-<li>1.1 类结构</li>
-<li>1.2 代码展示</li>
-</ul>
-</li>
-<li><ol start="2">
-<li>KVC中get调用顺序</li>
-</ol>
-<ul>
-<li>2.1 观察图片总结结论</li>
-<li>2.2 验证</li>
-</ul>
-</li>
-<li><ol start="3">
-<li>KVC中set调用顺序</li>
-</ol>
-</li>
-</ul>
-<hr>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">kvc</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/05/iOS-KVC/">查看更多 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -954,6 +931,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
@@ -990,11 +971,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+                <a href="javascript:void(0)" class="js-tag color4">kvc</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">kvc</a>
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
