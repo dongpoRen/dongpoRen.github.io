@@ -6,14 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>AutoReleasePool探索 | Hexo</title>
+  <title>AutoReleasePool探索 | Oreo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="背景关于自动释放池，这个在第一次写iOS程序的时候，就能看到main.m中有@autoreleasepool字样。所以它到底是干什么的，内部结构怎样，又是通过什么机制释放的？这是这篇文章主要解答的几个问题。 1. autoreleasepool内部结构将mian.m文件编译为C++代码时候，可以看到起内部的实现是借助__AtAutoreleasePool进行实现，内部结构是AutoreleaseP">
 <meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AutoReleasePool探索">
 <meta property="og:url" content="http://yoursite.com/2018/07/24/iOS-autoreleasepool/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Oreo">
 <meta property="og:description" content="背景关于自动释放池，这个在第一次写iOS程序的时候，就能看到main.m中有@autoreleasepool字样。所以它到底是干什么的，内部结构怎样，又是通过什么机制释放的？这是这篇文章主要解答的几个问题。 1. autoreleasepool内部结构将mian.m文件编译为C++代码时候，可以看到起内部的实现是借助__AtAutoreleasePool进行实现，内部结构是AutoreleaseP">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/619522-7bdc612ac1fd26da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -23,7 +23,7 @@
 <meta name="twitter:description" content="背景关于自动释放池，这个在第一次写iOS程序的时候，就能看到main.m中有@autoreleasepool字样。所以它到底是干什么的，内部结构怎样，又是通过什么机制释放的？这是这篇文章主要解答的几个问题。 1. autoreleasepool内部结构将mian.m文件编译为C++代码时候，可以看到起内部的实现是借助__AtAutoreleasePool进行实现，内部结构是AutoreleaseP">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/619522-7bdc612ac1fd26da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Oreo" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -471,15 +471,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Swift</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,11 +507,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">kvc</a>
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+                <a href="javascript:void(0)" class="js-tag color4">kvc</a>
               </li>
              
               <li class="article-tag-list-item">
