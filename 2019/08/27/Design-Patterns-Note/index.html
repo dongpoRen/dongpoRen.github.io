@@ -6,20 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo+GitHub部署个人blog | Hexo</title>
+  <title>Swift中的设计模式笔记 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装hexo 前置：安装好node，npm等。 切换到root用户： sudo su 安装镜像：npm install -g cnpm –registry=https://registry.npm.taobao.org 安装hexo框架：cnpm install -g hexo-cli">
-<meta name="keywords" content="hexo,github,blog">
+  <meta name="description" content="Fundamental Design PatternsMVC, Delegation, Strategy, Singleton, Memento, Observer, Builder 1. MVC  MVC_Demo">
+<meta name="keywords" content="设计模式,Swift">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo+GitHub部署个人blog">
-<meta property="og:url" content="http://yoursite.com/2019/08/23/hexo-github-build-personal-blog/index.html">
+<meta property="og:title" content="Swift中的设计模式笔记">
+<meta property="og:url" content="http://yoursite.com/2019/08/27/Design-Patterns-Note/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="安装hexo 前置：安装好node，npm等。 切换到root用户： sudo su 安装镜像：npm install -g cnpm –registry=https://registry.npm.taobao.org 安装hexo框架：cnpm install -g hexo-cli">
+<meta property="og:description" content="Fundamental Design PatternsMVC, Delegation, Strategy, Singleton, Memento, Observer, Builder 1. MVC  MVC_Demo">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-23T09:07:32.925Z">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/MVC_Diagram.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Delegation_Diagram.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Strategy_Diagram.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Singleton_Diagram.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Memento_Diagram.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Observer_Diagram.png">
+<meta property="og:updated_time" content="2019-08-27T06:44:51.862Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo+GitHub部署个人blog">
-<meta name="twitter:description" content="安装hexo 前置：安装好node，npm等。 切换到root用户： sudo su 安装镜像：npm install -g cnpm –registry=https://registry.npm.taobao.org 安装hexo框架：cnpm install -g hexo-cli">
+<meta name="twitter:title" content="Swift中的设计模式笔记">
+<meta name="twitter:description" content="Fundamental Design PatternsMVC, Delegation, Strategy, Singleton, Memento, Observer, Builder 1. MVC  MVC_Demo">
+<meta name="twitter:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/MVC_Diagram.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -151,20 +158,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hexo-github-build-personal-blog" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Design-Patterns-Note" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo+GitHub部署个人blog
+      Swift中的设计模式笔记
     </h1>
   
 
         
-        <a href="/2019/08/23/hexo-github-build-personal-blog/" class="archive-article-date">
-  	<time datetime="2019-08-23T04:04:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-23</time>
+        <a href="/2019/08/27/Design-Patterns-Note/" class="archive-article-date">
+  	<time datetime="2019-08-27T06:41:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-27</time>
 </a>    
     
     
@@ -178,43 +185,54 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><ol start="0">
-<li>前置：安装好node，npm等。</li>
-<li>切换到root用户： sudo su</li>
-<li>安装镜像：npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></li>
-<li>安装hexo框架：cnpm install -g hexo-cli</li>
-</ol>
+        <h1 id="Fundamental-Design-Patterns"><a href="#Fundamental-Design-Patterns" class="headerlink" title="Fundamental Design Patterns"></a>Fundamental Design Patterns</h1><p>MVC, Delegation, Strategy, Singleton, Memento, Observer, Builder</p>
+<h2 id="1-MVC"><a href="#1-MVC" class="headerlink" title="1. MVC"></a>1. MVC</h2><p><img src="/assets/blogImg/DesignPatterns/MVC_Diagram.png" alt="MVC"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/MVC" target="_blank" rel="noopener">MVC_Demo</a></li>
+</ul>
 <a id="more"></a>
 
-<h2 id="使用hexo"><a href="#使用hexo" class="headerlink" title="使用hexo"></a>使用hexo</h2><ol>
-<li>建立文件夹: mkdir blog</li>
-<li>初始化hexo: sudo hexo init</li>
-<li>开启服务hexo: hexo server (hexo s)</li>
-</ol>
-<h2 id="新建一篇文章"><a href="#新建一篇文章" class="headerlink" title="新建一篇文章:"></a>新建一篇文章:</h2><ol>
-<li>hexo n “我的第一篇博客文章”</li>
-<li>更改内容: vim </li>
-<li>清除一下缓存: hexo clean</li>
-<li>生成一下: hexo g</li>
-<li>本地查看一下: hexo s</li>
-</ol>
-<h2 id="部署到远端github："><a href="#部署到远端github：" class="headerlink" title="部署到远端github："></a>部署到远端github：</h2><ol>
-<li>创建一个仓库：必须是：你的昵称/github.io</li>
-<li>安装部署插件：cnpm install –save hexo-deployer-git</li>
-<li>设置_config.yml中的Deployment中的<br>type: git<br>repo: 仓库地址<br>branch: master</li>
-<li>部署: hexo deploy (hexo d)</li>
-<li>可以查看 你的昵称/github.io网址，则可以看到你的博客。</li>
-</ol>
-<h2 id="自定义主题："><a href="#自定义主题：" class="headerlink" title="自定义主题："></a>自定义主题：</h2><ol>
-<li>github.com/litten/hexo-theme-yilia</li>
-<li>下载主题：git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia</li>
-<li>修改_config.yml的theme: yilia</li>
-<li>清除一下: hexo clean</li>
-<li>生成一下: hexo g</li>
-<li>查看一下: hexo s</li>
-<li>推到远端: hexo d (推送远端后，需要2min左右才能看到变化)</li>
-</ol>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://b23.tv/av44544186" target="_blank" rel="noopener">CodeSheep</a></p>
+<h2 id="2-Delegation"><a href="#2-Delegation" class="headerlink" title="2. Delegation"></a>2. Delegation</h2><ul>
+<li>when to use: break up large classes or create generic, reusable components.</li>
+</ul>
+<p><img src="/assets/blogImg/DesignPatterns/Delegation_Diagram.png" alt="Delegation"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Delegation" target="_blank" rel="noopener">Delegation_Demo</a></li>
+</ul>
+<h2 id="3-Strategy"><a href="#3-Strategy" class="headerlink" title="3. Strategy"></a>3. Strategy</h2><p>when to use: </p>
+<blockquote>
+<p>Use the strategy pattern when you have two or more different behaviors that are interchangeable.</p>
+</blockquote>
+<p><img src="/assets/blogImg/DesignPatterns/Strategy_Diagram.png" alt="Strategy"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Strategy" target="_blank" rel="noopener">Strategy_Demo</a></li>
+</ul>
+<h2 id="4-Singleton"><a href="#4-Singleton" class="headerlink" title="4. Singleton"></a>4. Singleton</h2><p>when to use:</p>
+<blockquote>
+<p>Use the singleton pattern when having more than one instance of a class would cause problems, or when it just wouldn’t be logical.</p>
+</blockquote>
+<p><img src="/assets/blogImg/DesignPatterns/Singleton_Diagram.png" alt="Singleton"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Singleton" target="_blank" rel="noopener">Singleton_Demo</a></li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySingleton</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 1</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">let</span> shared = <span class="type">MySingleton</span>()</span><br><span class="line">  <span class="comment">// 2</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">init</span>() &#123; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-Memento"><a href="#5-Memento" class="headerlink" title="5. Memento"></a>5. Memento</h2><p>when to use:</p>
+<blockquote>
+<p>Use the memento pattern whenever you want to save and later restore an object’s state.</p>
+</blockquote>
+<p><img src="/assets/blogImg/DesignPatterns/Memento_Diagram.png" alt="Memento"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Memento" target="_blank" rel="noopener">Memento_Demo</a></li>
+</ul>
+<h2 id="6-Observer"><a href="#6-Observer" class="headerlink" title="6. Observer"></a>6. Observer</h2><p>when to use:</p>
+<blockquote>
+<p>Use the observer pattern whenever you want to receive changes made on another object.</p>
+</blockquote>
+<p><img src="/assets/blogImg/DesignPatterns/Observer_Diagram.png" alt="Observer"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Observer" target="_blank" rel="noopener">Observer_Demo</a></li>
+</ul>
 
       
 
@@ -228,15 +246,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Swift</a>
         		</li>
       		
 		</ul>
@@ -292,7 +306,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/23/hexo-github-build-personal-blog/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/27/Design-Patterns-Note/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -306,18 +320,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/27/Design-Patterns-Note/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Swift中的设计模式笔记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/22/data-structure-tree/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据结构-树</div>
+    <a href="/2019/08/23/hexo-github-build-personal-blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo+GitHub部署个人blog</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -336,19 +341,6 @@
             </div>
         </div>
         
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装hexo"><span class="toc-number">1.</span> <span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用hexo"><span class="toc-number">2.</span> <span class="toc-text">使用hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新建一篇文章"><span class="toc-number">3.</span> <span class="toc-text">新建一篇文章:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署到远端github："><span class="toc-number">4.</span> <span class="toc-text">部署到远端github：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义主题："><span class="toc-number">5.</span> <span class="toc-text">自定义主题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考链接"><span class="toc-number">6.</span> <span class="toc-text">参考链接</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
         
     </div>
 </aside>
@@ -377,7 +369,7 @@ if(true){
   	repo: 'dongpoRen.github.io',
   	owner: 'dongpoRen',
   	admin: ['dongpoRen'],
-  	id: 'Fri Aug 23 2019 12:04:38 GMT+0800',
+  	id: 'Tue Aug 27 2019 14:41:24 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 
