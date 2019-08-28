@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Singleton_Diagram.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Memento_Diagram.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Observer_Diagram.png">
-<meta property="og:updated_time" content="2019-08-27T07:22:23.748Z">
+<meta property="og:updated_time" content="2019-08-28T08:51:42.522Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Swift中的设计模式笔记">
 <meta name="twitter:description" content="Fundamental Design PatternsMVC, Delegation, Strategy, Singleton, Memento, Observer, Builder 1. MVC  MVC_Demo">
@@ -213,9 +213,16 @@
 </blockquote>
 <p><img src="/assets/blogImg/DesignPatterns/Singleton_Diagram.png" alt="Singleton"></p>
 <ul>
-<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Singleton" target="_blank" rel="noopener">Singleton_Demo</a></li>
+<li><p><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Singleton" target="_blank" rel="noopener">Singleton_Demo</a></p>
+</li>
+<li><p>true singleton</p>
+</li>
+<li><p>singleton plus</p>
+</li>
 </ul>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySingleton</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 1</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">let</span> shared = <span class="type">MySingleton</span>()</span><br><span class="line">  <span class="comment">// 2</span></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">init</span>() &#123; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// singleton plus</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySingleton</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 1</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">let</span> shared = <span class="type">MySingleton</span>()</span><br><span class="line">  <span class="comment">// 2</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">init</span>() &#123; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="5-Memento"><a href="#5-Memento" class="headerlink" title="5. Memento"></a>5. Memento</h2><p>when to use:</p>
 <blockquote>
@@ -224,6 +231,20 @@
 <p><img src="/assets/blogImg/DesignPatterns/Memento_Diagram.png" alt="Memento"></p>
 <ul>
 <li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Memento" target="_blank" rel="noopener">Memento_Demo</a></li>
+</ul>
+<h3 id="Codable：-typealias-Codable-Encodable-amp-Decodable"><a href="#Codable：-typealias-Codable-Encodable-amp-Decodable" class="headerlink" title="Codable：(typealias Codable = Encodable &amp; Decodable)"></a>Codable：(typealias Codable = Encodable &amp; Decodable)</h3><ul>
+<li>Encodable<ul>
+<li>encode object to jsonData</li>
+<li>model转jsonData</li>
+</ul>
+</li>
+<li>Decodable<ul>
+<li>decode jsonData to object</li>
+<li>jsonData转model<br>Foundation提供了基本的encoder和decoder。JSONEncoder and JSONDecoder。还有一个是JSONSerialization。</li>
+</ul>
+</li>
+<li>JSONSerialization：data &lt;-&gt; jsonDict/jsonArray.</li>
+<li>通常和Codable共同使用</li>
 </ul>
 <h2 id="6-Observer"><a href="#6-Observer" class="headerlink" title="6. Observer"></a>6. Observer</h2><p>when to use:</p>
 <blockquote>
@@ -492,23 +513,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">stack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">queue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -524,11 +529,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
+                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">kvc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,7 +557,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">kvc</a>
+                <a href="javascript:void(0)" class="js-tag color4">category</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,7 +569,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">category</a>
+                <a href="javascript:void(0)" class="js-tag color1">stack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">queue</a>
               </li>
             
             <div class="clearfix"></div>
