@@ -22,7 +22,8 @@
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Singleton_Diagram.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Memento_Diagram.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Observer_Diagram.png">
-<meta property="og:updated_time" content="2019-08-29T04:19:07.431Z">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Builder_Diagram.png">
+<meta property="og:updated_time" content="2019-08-30T06:19:07.867Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Swift中的设计模式笔记">
 <meta name="twitter:description" content="Fundamental Design PatternsMVC, Delegation, Strategy, Singleton, Memento, Observer, Builder 1. MVC  MVC_Demo">
@@ -259,6 +260,14 @@
 <li>自动移除observers。(当设置observer = nil时)</li>
 </ol>
 <h3 id="自定义KVO"><a href="#自定义KVO" class="headerlink" title="自定义KVO"></a>自定义KVO</h3><p>重新实现Observable<type>里的方法和属性,可以参考代码中的<a href="https://github.com/dongpoRen/DesignPatternsDemo/blob/Observer/PatternsDemo/PatternsDemo/Models/Observable.swift" target="_blank" rel="noopener">Observer.swift</a></type></p>
+<h2 id="7-Builder-Creational"><a href="#7-Builder-Creational" class="headerlink" title="7. Builder(Creational)"></a>7. Builder(Creational)</h2><p>when to use:</p>
+<blockquote>
+<p>Use the builder pattern when you want to create a complex object using a series of steps.</p>
+</blockquote>
+<p><img src="/assets/blogImg/DesignPatterns/Builder_Diagram.png" alt="Builder"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Builder" target="_blank" rel="noopener">Builder_Demo</a></li>
+</ul>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://store.raywenderlich.com/products/design-patterns-by-tutorials" target="_blank" rel="noopener">https://store.raywenderlich.com/products/design-patterns-by-tutorials</a></p>
 
       
@@ -526,18 +535,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">stack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">queue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -547,6 +544,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">stack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">queue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -570,15 +579,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">category</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">source</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mj</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">category</a>
               </li>
             
             <div class="clearfix"></div>
