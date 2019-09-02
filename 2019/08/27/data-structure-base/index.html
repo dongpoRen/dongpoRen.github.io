@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Oreo">
 <meta property="og:description" content="线性表存储结构：  顺序存储 链式存储 注意区别头指针和头结点    1234typedef struct Node &amp;#123;	ElementType data;	struct Node *next;&amp;#125; Node, *LinkedList;  链表的形式：单链表，循环链表，双向链表，双向循环链表。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-27T11:29:50.869Z">
+<meta property="og:updated_time" content="2019-09-02T05:48:32.406Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构基础知识总结">
 <meta name="twitter:description" content="线性表存储结构：  顺序存储 链式存储 注意区别头指针和头结点    1234typedef struct Node &amp;#123;	ElementType data;	struct Node *next;&amp;#125; Node, *LinkedList;  链表的形式：单链表，循环链表，双向链表，双向循环链表。">
@@ -210,6 +210,41 @@
 <li>数组：可以进行任意位置的插入和删除</li>
 <li>栈：只能在同一方向进行插入和删除</li>
 <li>队列：在不同的方向进行插入和删除。</li>
+</ul>
+<h1 id="串"><a href="#串" class="headerlink" title="串"></a>串</h1><p>KMP模式匹配算法<br>主串S与子串T进行匹配:</p>
+<ul>
+<li>S中的下标为i，T中为j。</li>
+<li>保持i保持递增。而j一直在来回变化</li>
+<li>求next数组</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (j == <span class="number">1</span>) next[j] = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">	<span class="comment">// t1 = T[1..&lt;j]</span></span><br><span class="line">	p = <span class="number">1</span>, k = j<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">while</span> (p&lt;j &amp;&amp; T[<span class="number">1.</span>..p] == T[k..&lt;j]) &#123;</span><br><span class="line">		p++, k--;</span><br><span class="line">	&#125;</span><br><span class="line">	next[j] = p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>note: 在计算next数组时，其中前缀，后缀是完全子串，长度不能与其相同。</code></p>
+<ul>
+<li>next[j]=0, j = 1</li>
+<li>next[j] = [1…(j-1)]的前缀与后缀的最大个数 + 1</li>
+<li>next[j] = 1, 其他情况</li>
+</ul>
+<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><ul>
+<li>邻接矩阵：两个数组表示。一个一维存储顶点信息，一个二维存储图中边或者弧的信息。</li>
+<li>邻接表：数组与链表相结合进行存储</li>
+</ul>
+<h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><ul>
+<li><p>深度优先遍历(DFS)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Boolean visited[MAX] = <span class="literal">false</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(MGraph G, <span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">	visited[i] = <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; G.numVertexes; j++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (G.arc[i][j] == <span class="number">1</span> &amp;&amp; !visited[j]) &#123;</span><br><span class="line">			DFS(G, j);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFSTraverse</span><span class="params">(MGraph G)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G.numVertexes; i++)</span><br><span class="line">		visited[i] = <span class="literal">false</span>;</span><br><span class="line">	<span class="comment">// 如果是连通图, 只执行一次.</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G.numVertexes; i++)</span><br><span class="line">		<span class="keyword">if</span> (!visited[i]) </span><br><span class="line">			DF(G, i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>广度优先遍历(BFS)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BFSTraverse</span><span class="params">(MGraph G)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i, j;</span><br><span class="line">	Queue Q;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G.numVertexes; i++)</span><br><span class="line">		visited[i] = <span class="literal">false</span>;</span><br><span class="line">	InitQueue(&amp;Q);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; G.numVertexes; i++) </span><br><span class="line">		<span class="keyword">if</span> (!visited[i]) &#123;</span><br><span class="line">			visited[i] = <span class="literal">true</span>;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d "</span>, G.vexs[i]);</span><br><span class="line">			Enqueue(Q, i);</span><br><span class="line"></span><br><span class="line">			<span class="keyword">while</span> (!QueueEmpty(Q)) &#123;</span><br><span class="line">				Dequeue(Q);</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; G.numVertexes; j++) &#123;</span><br><span class="line">					<span class="keyword">if</span> (G[i][j] == <span class="number">1</span> &amp;&amp; !visited[j]) &#123;</span><br><span class="line">						visited[j] = <span class="literal">true</span>;</span><br><span class="line">						<span class="built_in">printf</span>(<span class="string">"%d "</span>, G.vexs[j]);</span><br><span class="line">						Enqueue(Q, j);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;	</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h2><ul>
+<li>Prim</li>
+<li>Kruskal</li>
+</ul>
+<h2 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h2><ul>
+<li>Dijkstra</li>
+<li>Floyd</li>
 </ul>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>大话数据结构</p>
 
@@ -461,11 +496,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color1">stack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">queue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -481,19 +520,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">stack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">queue</a>
+                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -505,11 +536,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">source</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mj</a>
+                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -518,6 +545,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">block</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">source</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mj</a>
               </li>
              
               <li class="article-tag-list-item">
