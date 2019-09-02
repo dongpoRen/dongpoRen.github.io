@@ -23,7 +23,10 @@
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Memento_Diagram.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Observer_Diagram.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Builder_Diagram.png">
-<meta property="og:updated_time" content="2019-08-30T06:19:07.867Z">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/MVVM_Diagram.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Factory_Diagram.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Adapter_Diagram.png">
+<meta property="og:updated_time" content="2019-09-02T05:43:13.070Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Swift中的设计模式笔记">
 <meta name="twitter:description" content="Fundamental Design PatternsMVC, Delegation, Strategy, Singleton, Memento, Observer, Builder 1. MVC  MVC_Demo">
@@ -267,6 +270,45 @@
 <p><img src="/assets/blogImg/DesignPatterns/Builder_Diagram.png" alt="Builder"></p>
 <ul>
 <li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Builder" target="_blank" rel="noopener">Builder_Demo</a></li>
+</ul>
+<h1 id="Intermediate-Design-Patterns"><a href="#Intermediate-Design-Patterns" class="headerlink" title="Intermediate Design Patterns"></a>Intermediate Design Patterns</h1><p>MVVM, Adapter, Factory, Iterator, Prototype, State, Multicast Delegate, Facade etc.</p>
+<h2 id="8-MVVM"><a href="#8-MVVM" class="headerlink" title="8. MVVM"></a>8. MVVM</h2><p>when to use:</p>
+<blockquote>
+<p>Use this pattern when you need to transform models into another representation for a view. For example, you can use a view model to transform a Date into a date-formatted String, a Decimal into a currency-formatted String, or many other useful transformations.</p>
+</blockquote>
+<h3 id="key-points"><a href="#key-points" class="headerlink" title="key points"></a>key points</h3><ul>
+<li>slim down view ctroller</li>
+<li>view models are classes that take objects and transform them into different object, which can be passed into the view controller and displayed on the view.</li>
+<li>configure the view and view model according the relationships which is one to more or more to one</li>
+<li>MVC may be a better start point in the begginner of project.Then choose different design patterns based on changing requirements.</li>
+</ul>
+<p><img src="/assets/blogImg/DesignPatterns/MVVM_Diagram.png" alt="MVVM"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/MVVM" target="_blank" rel="noopener">MVVM_Demo</a></li>
+</ul>
+<h2 id="9-Factory-creational"><a href="#9-Factory-creational" class="headerlink" title="9. Factory(creational)"></a>9. Factory(creational)</h2><h3 id="when-to-use"><a href="#when-to-use" class="headerlink" title="when to use"></a>when to use</h3><blockquote>
+<p>Use the factory pattern whenever you want to separate out product creation logic, instead of having consumers create products directly.</p>
+</blockquote>
+<ul>
+<li>eg<br>将创建annotation的逻辑从viewcontroller中抽取出来.</li>
+</ul>
+<p><img src="/assets/blogImg/DesignPatterns/Factory_Diagram.png" alt="Factory"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Factory" target="_blank" rel="noopener">Factory_Demo</a></li>
+</ul>
+<h2 id="10-Adapter-behavioral"><a href="#10-Adapter-behavioral" class="headerlink" title="10. Adapter(behavioral)"></a>10. Adapter(behavioral)</h2><ul>
+<li>allow incompatible types to work together.</li>
+<li>connecting two elements that otherwise won’t “fit” with each other.</li>
+</ul>
+<h3 id="when-to-use-1"><a href="#when-to-use-1" class="headerlink" title="when to use"></a>when to use</h3><blockquote>
+<p>Classes, modules, and functions can’t always be modified, especially if they’re from a third-party library. Sometimes you have to adapt instead!</p>
+</blockquote>
+<ul>
+<li>eg<br>使用不同的第三方的登录协议</li>
+</ul>
+<p><img src="/assets/blogImg/DesignPatterns/Adapter_Diagram.png" alt="Adapter"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Adapter" target="_blank" rel="noopener">Adapter_Demo</a></li>
 </ul>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://store.raywenderlich.com/products/design-patterns-by-tutorials" target="_blank" rel="noopener">https://store.raywenderlich.com/products/design-patterns-by-tutorials</a></p>
 
@@ -571,6 +613,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">source</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mj</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">指针</a>
               </li>
              
@@ -580,14 +630,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">category</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">source</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mj</a>
               </li>
             
             <div class="clearfix"></div>
