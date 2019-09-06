@@ -26,7 +26,11 @@
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/MVVM_Diagram.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Factory_Diagram.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Adapter_Diagram.png">
-<meta property="og:updated_time" content="2019-09-02T05:43:13.070Z">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Iterator_Diagram.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Prototype_Diagram.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/State_Diagram.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/MulticastDelegate_Diagram.png">
+<meta property="og:updated_time" content="2019-09-06T03:58:50.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Swift中的设计模式笔记">
 <meta name="twitter:description" content="Fundamental Design PatternsMVC, Delegation, Strategy, Singleton, Memento, Observer, Builder 1. MVC  MVC_Demo">
@@ -310,6 +314,39 @@
 <ul>
 <li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Adapter" target="_blank" rel="noopener">Adapter_Demo</a></li>
 </ul>
+<h2 id="11-Iterator-behavioral"><a href="#11-Iterator-behavioral" class="headerlink" title="11. Iterator(behavioral)"></a>11. Iterator(behavioral)</h2><h3 id="when-to-use-2"><a href="#when-to-use-2" class="headerlink" title="when to use"></a>when to use</h3><blockquote>
+<p>Use the iterator pattern when you have a class or struct that holds a group of ordered objects, and you want to make it iterable using a for in loop.</p>
+</blockquote>
+<p><img src="/assets/blogImg/DesignPatterns/Iterator_Diagram.png" alt="Iterator"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Iterator" target="_blank" rel="noopener">Iterator_Demo</a></li>
+</ul>
+<h3 id="note"><a href="#note" class="headerlink" title="note"></a>note</h3><ul>
+<li>Sequece: IteratorProtocol</li>
+<li>IteartorProtocol方法有next();</li>
+<li>通常是你的类/结构体遵循Sequence协议,而不是IteratorProtocol.</li>
+</ul>
+<h2 id="12-Prototype-creational"><a href="#12-Prototype-creational" class="headerlink" title="12. Prototype(creational)"></a>12. Prototype(creational)</h2><h3 id="when-to-use-3"><a href="#when-to-use-3" class="headerlink" title="when to use"></a>when to use</h3><blockquote>
+<p>Use this pattern to enable an object to copy itself.    For example, Foundation defines the NSCopying protocol. However, this protocol was designed for Objective-C, and unfortunately, it doesn’t work that well in Swift. You can still use it, but you’ll wind up writing more boilerplate code yourself.    Instead, you’ll implement your own Copying protocol in this chapter. You’ll learn about the prototype pattern in depth this way, and your resulting implementation will be more Swifty too!</p>
+</blockquote>
+<p><img src="/assets/blogImg/DesignPatterns/Prototype_Diagram.png" alt="Prototype"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Prototype" target="_blank" rel="noopener">Prototype_Demo</a></li>
+</ul>
+<h2 id="13-State-behavior"><a href="#13-State-behavior" class="headerlink" title="13. State(behavior)"></a>13. State(behavior)</h2><h3 id="when-to-use-4"><a href="#when-to-use-4" class="headerlink" title="when to use"></a>when to use</h3><blockquote>
+<p>Use the state pattern to create a system that has two or more states that it changes between during its lifetime.</p>
+</blockquote>
+<p><img src="/assets/blogImg/DesignPatterns/State_Diagram.png" alt="State"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/State" target="_blank" rel="noopener">State_Demo</a></li>
+</ul>
+<h2 id="14-Multicast-Delegate-behavior"><a href="#14-Multicast-Delegate-behavior" class="headerlink" title="14. Multicast Delegate(behavior)"></a>14. Multicast Delegate(behavior)</h2><h3 id="when-to-use-5"><a href="#when-to-use-5" class="headerlink" title="when to use"></a>when to use</h3><blockquote>
+<p>Use this pattern to create one-to-many delegate relationships.</p>
+</blockquote>
+<p><img src="/assets/blogImg/DesignPatterns/MulticastDelegate_Diagram.png" alt="MulticastDelegate"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/MulticastDelegate" target="_blank" rel="noopener">MulticastDelegate_Demo</a></li>
+</ul>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://store.raywenderlich.com/products/design-patterns-by-tutorials" target="_blank" rel="noopener">https://store.raywenderlich.com/products/design-patterns-by-tutorials</a></p>
 
       
@@ -557,7 +594,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color1">stack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">queue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -569,15 +610,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">stack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">queue</a>
+                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -593,15 +626,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">kvc</a>
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -609,15 +638,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">指针</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">block</a>
+                <a href="javascript:void(0)" class="js-tag color4">kvc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -626,6 +655,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mj</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">指针</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">block</a>
               </li>
              
               <li class="article-tag-list-item">
