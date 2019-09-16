@@ -30,7 +30,14 @@
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Prototype_Diagram.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/State_Diagram.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/MulticastDelegate_Diagram.png">
-<meta property="og:updated_time" content="2019-09-06T03:58:50.820Z">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Facade_Diagram.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Flyweight_Diagram.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Mediator_Diagram.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Composite_Diagram.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Command_Diagram.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/ChainOfResponsibility_Diagram.png">
+<meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Coordinator_Diagram.png">
+<meta property="og:updated_time" content="2019-09-16T07:09:32.865Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Swift中的设计模式笔记">
 <meta name="twitter:description" content="Fundamental Design PatternsMVC, Delegation, Strategy, Singleton, Memento, Observer, Builder 1. MVC  MVC_Demo">
@@ -347,6 +354,55 @@
 <ul>
 <li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/MulticastDelegate" target="_blank" rel="noopener">MulticastDelegate_Demo</a></li>
 </ul>
+<h2 id="15-Facade-structural"><a href="#15-Facade-structural" class="headerlink" title="15. Facade(structural)"></a>15. Facade(structural)</h2><h3 id="when-to-use-6"><a href="#when-to-use-6" class="headerlink" title="when to use"></a>when to use</h3><blockquote>
+<p>Use this pattern whenever you have a system made up of multiple components and want to provide a simple way for users to perform complex tasks.</p>
+</blockquote>
+<p><img src="/assets/blogImg/DesignPatterns/Facade_Diagram.png" alt="Facade"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Facade" target="_blank" rel="noopener">Facade</a></li>
+</ul>
+<h1 id="Advanced-Design-Patterns"><a href="#Advanced-Design-Patterns" class="headerlink" title="Advanced Design Patterns"></a>Advanced Design Patterns</h1><p>Flyweight, Mediator, Composite, Command, Chain of Responsibility, Coordinator.</p>
+<h2 id="16-Flyweight-structural"><a href="#16-Flyweight-structural" class="headerlink" title="16.Flyweight(structural)"></a>16.Flyweight(structural)</h2><h3 id="when-to-use-7"><a href="#when-to-use-7" class="headerlink" title="when to use"></a>when to use</h3><blockquote>
+<p>Use a flyweight in places where you would use a singleton, but you need multiple shared instances with different configurations. If you have an object that’s resource intensive to create and you can’t minimize the cost of creation process, the best thing to do is create the object just once and pass it around instead</p>
+</blockquote>
+<p><img src="/assets/blogImg/DesignPatterns/Flyweight_Diagram.png" alt="Flyweight"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Flyweight" target="_blank" rel="noopener">Flyweight</a></li>
+</ul>
+<h2 id="17-Mediator-behavioral"><a href="#17-Mediator-behavioral" class="headerlink" title="17.Mediator(behavioral)"></a>17.Mediator(behavioral)</h2><h3 id="when-to-use-8"><a href="#when-to-use-8" class="headerlink" title="when to use"></a>when to use</h3><blockquote>
+<p>This mediator pattern is useful to separate interactions between colleagues into an object, the mediator.<br>This pattern is especially useful when you need one or more colleagues to act upon events initiated by another colleague, and, in turn, have this colleague generate further events that affect other colleagues.</p>
+</blockquote>
+<p><img src="/assets/blogImg/DesignPatterns/Mediator_Diagram.png" alt="Mediator"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Mediator" target="_blank" rel="noopener">Mediator</a></li>
+</ul>
+<h2 id="18-Composite-structural"><a href="#18-Composite-structural" class="headerlink" title="18.Composite(structural)"></a>18.Composite(structural)</h2><h3 id="when-to-use-9"><a href="#when-to-use-9" class="headerlink" title="when to use"></a>when to use</h3><blockquote>
+<p>If your app’s class hierarchy forms a branching pattern, trying to create two types of classes for branches and nodes can make it difficult for those classes to communicate.</p>
+</blockquote>
+<p><img src="/assets/blogImg/DesignPatterns/Composite_Diagram.png" alt="Composite"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Composite" target="_blank" rel="noopener">Composite</a></li>
+</ul>
+<h2 id="19-Command-behavioral"><a href="#19-Command-behavioral" class="headerlink" title="19.Command(behavioral)"></a>19.Command(behavioral)</h2><h3 id="when-to-use-10"><a href="#when-to-use-10" class="headerlink" title="when to use"></a>when to use</h3><blockquote>
+<p>Use this pattern whenever you want to create actions that can be executed on receivers at a later point in time. For example, you can create and store commands to be performed by a computer AI, and then execute these over time.</p>
+</blockquote>
+<p><img src="/assets/blogImg/DesignPatterns/Command_Diagram.png" alt="Command"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Command" target="_blank" rel="noopener">Command</a></li>
+</ul>
+<h2 id="20-Chain-Of-Responsibility-behavioral"><a href="#20-Chain-Of-Responsibility-behavioral" class="headerlink" title="20.Chain-Of-Responsibility(behavioral)"></a>20.Chain-Of-Responsibility(behavioral)</h2><h3 id="when-to-use-11"><a href="#when-to-use-11" class="headerlink" title="when to use"></a>when to use</h3><blockquote>
+<p>Use this pattern whenever you have a group of related objects that handle similar events but vary based on event type, attributes or anything else related to the event.</p>
+</blockquote>
+<p><img src="/assets/blogImg/DesignPatterns/ChainOfResponsibility_Diagram.png" alt="ChainOfResponsibility"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/ChainOfResponsibility" target="_blank" rel="noopener">Command</a></li>
+</ul>
+<h2 id="21-Coordinator-structual"><a href="#21-Coordinator-structual" class="headerlink" title="21.Coordinator(structual)"></a>21.Coordinator(structual)</h2><h3 id="when-to-use-12"><a href="#when-to-use-12" class="headerlink" title="when to use"></a>when to use</h3><blockquote>
+<p>Use this pattern to decouple view controllers from one another. The only component that knows about view controllers directly is the coordinator. Consequently, view controllers are much more reusable: If you want to create a new flow within your app, you simply create a new coordinator!<br><img src="/assets/blogImg/DesignPatterns/Coordinator_Diagram.png" alt="Coordinator"></p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Coordinator" target="_blank" rel="noopener">Command</a></li>
+</ul>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://store.raywenderlich.com/products/design-patterns-by-tutorials" target="_blank" rel="noopener">https://store.raywenderlich.com/products/design-patterns-by-tutorials</a></p>
 
       
@@ -610,7 +666,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -619,6 +675,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">queue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -634,15 +694,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">kvc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -654,19 +714,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">category</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">source</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mj</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">category</a>
               </li>
             
             <div class="clearfix"></div>
