@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Swift中的设计模式笔记 | Oreo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Fundamental Design PatternsMVC, Delegation, Strategy, Singleton, Memento, Observer, Builder 1. MVC  MVC_Demo">
+  <meta name="description" content="OverView Three types of design patterns  Structual patterns describe how objects are composed to form larger subsystems   MVC MVVM, Facade Flyweight, Composite, Coordinator   Behavioral patterns descr">
 <meta name="keywords" content="设计模式,Swift">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Swift中的设计模式笔记">
 <meta property="og:url" content="http://yoursite.com/2019/08/27/Design-Patterns-Note/index.html">
 <meta property="og:site_name" content="Oreo">
-<meta property="og:description" content="Fundamental Design PatternsMVC, Delegation, Strategy, Singleton, Memento, Observer, Builder 1. MVC  MVC_Demo">
+<meta property="og:description" content="OverView Three types of design patterns  Structual patterns describe how objects are composed to form larger subsystems   MVC MVVM, Facade Flyweight, Composite, Coordinator   Behavioral patterns descr">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/MVC_Diagram.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Delegation_Diagram.png">
@@ -37,10 +37,10 @@
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Command_Diagram.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/ChainOfResponsibility_Diagram.png">
 <meta property="og:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/Coordinator_Diagram.png">
-<meta property="og:updated_time" content="2019-09-16T07:09:32.865Z">
+<meta property="og:updated_time" content="2019-09-19T03:27:39.740Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Swift中的设计模式笔记">
-<meta name="twitter:description" content="Fundamental Design PatternsMVC, Delegation, Strategy, Singleton, Memento, Observer, Builder 1. MVC  MVC_Demo">
+<meta name="twitter:description" content="OverView Three types of design patterns  Structual patterns describe how objects are composed to form larger subsystems   MVC MVVM, Facade Flyweight, Composite, Coordinator   Behavioral patterns descr">
 <meta name="twitter:image" content="http://yoursite.com/assets/blogImg/DesignPatterns/MVC_Diagram.png">
   
     <link rel="alternative" href="/atom.xml" title="Oreo" type="application/atom+xml">
@@ -200,21 +200,47 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Fundamental-Design-Patterns"><a href="#Fundamental-Design-Patterns" class="headerlink" title="Fundamental Design Patterns"></a>Fundamental Design Patterns</h1><p>MVC, Delegation, Strategy, Singleton, Memento, Observer, Builder</p>
-<h2 id="1-MVC"><a href="#1-MVC" class="headerlink" title="1. MVC"></a>1. MVC</h2><p><img src="/assets/blogImg/DesignPatterns/MVC_Diagram.png" alt="MVC"></p>
+        <h1 id="OverView"><a href="#OverView" class="headerlink" title="OverView"></a>OverView</h1><hr>
+<p>Three types of design patterns</p>
+<ol>
+<li><strong>Structual patterns</strong> describe how objects are composed to form larger subsystems</li>
+</ol>
 <ul>
-<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/MVC" target="_blank" rel="noopener">MVC_Demo</a></li>
+<li>MVC</li>
+<li>MVVM, Facade</li>
+<li>Flyweight, Composite, Coordinator</li>
+</ul>
+<ol start="2">
+<li><strong>Behavioral patterns</strong> describe how objects communicate with each other.</li>
+</ol>
+<ul>
+<li>Delegation, Strategy, Observer, Memento</li>
+<li>Adapter, Iterator, State, Multicast Delegate</li>
+<li>Mediator, Command, Chain Of Responsibility</li>
+</ul>
+<ol start="3">
+<li><strong>Creational patterns</strong> instantiate or “create” objects for you.</li>
+</ol>
+<ul>
+<li>Singleton, Builder</li>
+<li>Factory, Prototype</li>
 </ul>
 <a id="more"></a>
 
-<h2 id="2-Delegation"><a href="#2-Delegation" class="headerlink" title="2. Delegation"></a>2. Delegation</h2><ul>
+<h1 id="Fundamental-Design-Patterns"><a href="#Fundamental-Design-Patterns" class="headerlink" title="Fundamental Design Patterns"></a>Fundamental Design Patterns</h1><hr>
+<p>MVC, Delegation, Strategy, Singleton, Memento, Observer, Builder</p>
+<h2 id="1-MVC-Structural"><a href="#1-MVC-Structural" class="headerlink" title="1. MVC(Structural)"></a>1. MVC(Structural)</h2><p><img src="/assets/blogImg/DesignPatterns/MVC_Diagram.png" alt="MVC"></p>
+<ul>
+<li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/MVC" target="_blank" rel="noopener">MVC_Demo</a></li>
+</ul>
+<h2 id="2-Delegation-Behavioral"><a href="#2-Delegation-Behavioral" class="headerlink" title="2. Delegation(Behavioral)"></a>2. Delegation(Behavioral)</h2><ul>
 <li>when to use: break up large classes or create generic, reusable components.</li>
 </ul>
 <p><img src="/assets/blogImg/DesignPatterns/Delegation_Diagram.png" alt="Delegation"></p>
 <ul>
 <li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Delegation" target="_blank" rel="noopener">Delegation_Demo</a></li>
 </ul>
-<h2 id="3-Strategy"><a href="#3-Strategy" class="headerlink" title="3. Strategy"></a>3. Strategy</h2><p>when to use: </p>
+<h2 id="3-Strategy-Behavioral"><a href="#3-Strategy-Behavioral" class="headerlink" title="3. Strategy(Behavioral)"></a>3. Strategy(Behavioral)</h2><p>when to use: </p>
 <blockquote>
 <p>Use the strategy pattern when you have two or more different behaviors that are interchangeable.</p>
 </blockquote>
@@ -222,7 +248,7 @@
 <ul>
 <li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Strategy" target="_blank" rel="noopener">Strategy_Demo</a></li>
 </ul>
-<h2 id="4-Singleton"><a href="#4-Singleton" class="headerlink" title="4. Singleton"></a>4. Singleton</h2><p>when to use:</p>
+<h2 id="4-Singleton-Creational"><a href="#4-Singleton-Creational" class="headerlink" title="4. Singleton(Creational)"></a>4. Singleton(Creational)</h2><p>when to use:</p>
 <blockquote>
 <p>Use the singleton pattern when having more than one instance of a class would cause problems, or when it just wouldn’t be logical.</p>
 </blockquote>
@@ -239,7 +265,7 @@
 
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// singleton plus</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySingleton</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 1</span></span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">let</span> shared = <span class="type">MySingleton</span>()</span><br><span class="line">  <span class="comment">// 2</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">init</span>() &#123; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="5-Memento"><a href="#5-Memento" class="headerlink" title="5. Memento"></a>5. Memento</h2><p>when to use:</p>
+<h2 id="5-Memento-Behavioral"><a href="#5-Memento-Behavioral" class="headerlink" title="5. Memento(Behavioral)"></a>5. Memento(Behavioral)</h2><p>when to use:</p>
 <blockquote>
 <p>Use the memento pattern whenever you want to save and later restore an object’s state.</p>
 </blockquote>
@@ -261,7 +287,7 @@
 <li>JSONSerialization：data &lt;-&gt; jsonDict/jsonArray.</li>
 <li>通常和Codable共同使用</li>
 </ul>
-<h2 id="6-Observer"><a href="#6-Observer" class="headerlink" title="6. Observer"></a>6. Observer</h2><p>when to use:</p>
+<h2 id="6-Observer-Behavioral"><a href="#6-Observer-Behavioral" class="headerlink" title="6. Observer(Behavioral)"></a>6. Observer(Behavioral)</h2><p>when to use:</p>
 <blockquote>
 <p>Use the observer pattern whenever you want to receive changes made on another object.</p>
 </blockquote>
@@ -282,8 +308,9 @@
 <ul>
 <li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Builder" target="_blank" rel="noopener">Builder_Demo</a></li>
 </ul>
-<h1 id="Intermediate-Design-Patterns"><a href="#Intermediate-Design-Patterns" class="headerlink" title="Intermediate Design Patterns"></a>Intermediate Design Patterns</h1><p>MVVM, Adapter, Factory, Iterator, Prototype, State, Multicast Delegate, Facade etc.</p>
-<h2 id="8-MVVM"><a href="#8-MVVM" class="headerlink" title="8. MVVM"></a>8. MVVM</h2><p>when to use:</p>
+<h1 id="Intermediate-Design-Patterns"><a href="#Intermediate-Design-Patterns" class="headerlink" title="Intermediate Design Patterns"></a>Intermediate Design Patterns</h1><hr>
+<p>MVVM, Adapter, Factory, Iterator, Prototype, State, Multicast Delegate, Facade etc.</p>
+<h2 id="8-MVVM-Structural"><a href="#8-MVVM-Structural" class="headerlink" title="8. MVVM(Structural)"></a>8. MVVM(Structural)</h2><p>when to use:</p>
 <blockquote>
 <p>Use this pattern when you need to transform models into another representation for a view. For example, you can use a view model to transform a Date into a date-formatted String, a Decimal into a currency-formatted String, or many other useful transformations.</p>
 </blockquote>
@@ -361,7 +388,8 @@
 <ul>
 <li><a href="https://github.com/dongpoRen/DesignPatternsDemo/tree/Facade" target="_blank" rel="noopener">Facade</a></li>
 </ul>
-<h1 id="Advanced-Design-Patterns"><a href="#Advanced-Design-Patterns" class="headerlink" title="Advanced Design Patterns"></a>Advanced Design Patterns</h1><p>Flyweight, Mediator, Composite, Command, Chain of Responsibility, Coordinator.</p>
+<h1 id="Advanced-Design-Patterns"><a href="#Advanced-Design-Patterns" class="headerlink" title="Advanced Design Patterns"></a>Advanced Design Patterns</h1><hr>
+<p>Flyweight, Mediator, Composite, Command, Chain of Responsibility, Coordinator.</p>
 <h2 id="16-Flyweight-structural"><a href="#16-Flyweight-structural" class="headerlink" title="16.Flyweight(structural)"></a>16.Flyweight(structural)</h2><h3 id="when-to-use-7"><a href="#when-to-use-7" class="headerlink" title="when to use"></a>when to use</h3><blockquote>
 <p>Use a flyweight in places where you would use a singleton, but you need multiple shared instances with different configurations. If you have an object that’s resource intensive to create and you can’t minimize the cost of creation process, the best thing to do is create the object just once and pass it around instead</p>
 </blockquote>
@@ -654,19 +682,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">UML</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -694,11 +714,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">kvc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GCD</a>
               </li>
              
               <li class="article-tag-list-item">
