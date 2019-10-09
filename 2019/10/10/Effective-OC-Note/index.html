@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>C++常用语法 | Oreo</title>
+  <title>Effective Objective-C 2.0 note | Oreo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="C++是C的一个超集。任何合法的C程序都是合法的C++程序。 字符串：C++ 提供了两种类型字符串表示形式：  C风格字符串    (#include &amp;lt;cstring&amp;gt;) C++引入的string类型 (#include &amp;lt;string&amp;gt;)">
-<meta name="keywords" content="C++">
+  <meta name="description" content="1.基础1.OC起源 消息结构语言，运行环境决定运行时代码 函数结构语言，有编译器决定 OC的工作有运行期组件而非编译器来完成 OC语言中指针用来指示对象，对象内存总是分配在堆空间，堆内存使用”引用计数”管理 分配在堆中的内存直接管理，分配在栈上的保存变量的内存会在其栈帧弹出时，自动清理。 OC使用动态绑定的消息结构，在运行时才会检查对象类型。 发送消息时，如何执行由运行环境而非编译器决定。">
+<meta name="keywords" content="iOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++常用语法">
-<meta property="og:url" content="http://yoursite.com/2019/08/27/C-Grammer/index.html">
+<meta property="og:title" content="Effective Objective-C 2.0 note">
+<meta property="og:url" content="http://yoursite.com/2019/10/10/Effective-OC-Note/index.html">
 <meta property="og:site_name" content="Oreo">
-<meta property="og:description" content="C++是C的一个超集。任何合法的C程序都是合法的C++程序。 字符串：C++ 提供了两种类型字符串表示形式：  C风格字符串    (#include &amp;lt;cstring&amp;gt;) C++引入的string类型 (#include &amp;lt;string&amp;gt;)">
+<meta property="og:description" content="1.基础1.OC起源 消息结构语言，运行环境决定运行时代码 函数结构语言，有编译器决定 OC的工作有运行期组件而非编译器来完成 OC语言中指针用来指示对象，对象内存总是分配在堆空间，堆内存使用”引用计数”管理 分配在堆中的内存直接管理，分配在栈上的保存变量的内存会在其栈帧弹出时，自动清理。 OC使用动态绑定的消息结构，在运行时才会检查对象类型。 发送消息时，如何执行由运行环境而非编译器决定。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-27T09:02:32.375Z">
+<meta property="og:updated_time" content="2019-10-09T18:27:14.244Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C++常用语法">
-<meta name="twitter:description" content="C++是C的一个超集。任何合法的C程序都是合法的C++程序。 字符串：C++ 提供了两种类型字符串表示形式：  C风格字符串    (#include &amp;lt;cstring&amp;gt;) C++引入的string类型 (#include &amp;lt;string&amp;gt;)">
+<meta name="twitter:title" content="Effective Objective-C 2.0 note">
+<meta name="twitter:description" content="1.基础1.OC起源 消息结构语言，运行环境决定运行时代码 函数结构语言，有编译器决定 OC的工作有运行期组件而非编译器来完成 OC语言中指针用来指示对象，对象内存总是分配在堆空间，堆内存使用”引用计数”管理 分配在堆中的内存直接管理，分配在栈上的保存变量的内存会在其栈帧弹出时，自动清理。 OC使用动态绑定的消息结构，在运行时才会检查对象类型。 发送消息时，如何执行由运行环境而非编译器决定。">
   
     <link rel="alternative" href="/atom.xml" title="Oreo" type="application/atom+xml">
   
@@ -151,20 +151,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-C-Grammer" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Effective-OC-Note" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      C++常用语法
+      Effective Objective-C 2.0 note
     </h1>
   
 
         
-        <a href="/2019/08/27/C-Grammer/" class="archive-article-date">
-  	<time datetime="2019-08-27T08:57:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-27</time>
+        <a href="/2019/10/10/Effective-OC-Note/" class="archive-article-date">
+  	<time datetime="2019-10-09T18:21:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
 </a>    
     
     
@@ -178,68 +178,312 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>C++是C的一个超集。任何合法的C程序都是合法的C++程序。</p>
-<h2 id="字符串："><a href="#字符串：" class="headerlink" title="字符串："></a>字符串：</h2><p>C++ 提供了两种类型字符串表示形式：</p>
-<ul>
-<li>C风格字符串    (#include &lt;cstring&gt;)</li>
-<li>C++引入的string类型 (#include &lt;string&gt;)</li>
+        <h1 id="1-基础"><a href="#1-基础" class="headerlink" title="1.基础"></a>1.基础</h1><h2 id="1-OC起源"><a href="#1-OC起源" class="headerlink" title="1.OC起源"></a>1.OC起源</h2><ul>
+<li><strong>消息结构</strong>语言，运行环境决定运行时代码</li>
+<li><strong>函数结构</strong>语言，有编译器决定</li>
+<li>OC的工作有<em>运行期组件</em>而非编译器来完成</li>
+<li>OC语言中指针用来指示对象，对象内存总是分配在<code>堆空间</code>，堆内存使用”引用计数”管理</li>
+<li>分配在堆中的内存直接管理，分配在栈上的保存变量的内存会在其栈帧弹出时，自动清理。</li>
+<li>OC使用<strong>动态绑定</strong>的消息结构，在运行时才会检查对象类型。</li>
+<li>发送消息时，如何执行由运行环境而非编译器决定。</li>
 </ul>
 <a id="more"></a>
 
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>其他变量的一个别名</p>
-<h2 id="引用-VS-指针"><a href="#引用-VS-指针" class="headerlink" title="引用 VS 指针"></a>引用 VS 指针</h2><ul>
-<li>不存在空引用。必须创建时就进行初始化操作。</li>
-<li>一旦引用被初始化为一个对象，就不能再指向另一个对象。</li>
+<h2 id="2-类的头文件-尽量少引用其他头文件"><a href="#2-类的头文件-尽量少引用其他头文件" class="headerlink" title="2.类的头文件, 尽量少引用其他头文件"></a>2.类的头文件, 尽量少引用其他头文件</h2><ul>
+<li>使用<code>@class XXX</code>，进行”向前声明”，其解决了两个类互相引用的问题。</li>
+<li>若因要实现属性、实例变量或者要遵循协议而必须引入头文件，则尽量将其移至“class-continuation分类（类扩展）”。</li>
+<li>若协议无法移动到类扩展中，则将协议单独放在一个头文件中。</li>
 </ul>
-<h2 id="C-STL"><a href="#C-STL" class="headerlink" title="C++ STL"></a>C++ STL</h2><p>三个组件：</p>
-<ul>
-<li>容器<ul>
-<li>deque, list, vector, map等</li>
-</ul>
+<h2 id="3-多用字面量语法，少用与之等价的方法"><a href="#3-多用字面量语法，少用与之等价的方法" class="headerlink" title="3.多用字面量语法，少用与之等价的方法"></a>3.多用字面量语法，少用与之等价的方法</h2><ul>
+<li><p>对于字面数值（int、float、bool等）放到OC对象中，使用<code>NSNumber</code>。更好地是使用<code>@</code>.也可用于表达式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">NSNumber *intNumber = @1;</span><br><span class="line">NSNumber *floatNumber = @1.3f;</span><br><span class="line">NSNumber *boolNumber = @YES;</span><br></pre></td></tr></table></figure>
 </li>
-<li>算法<ul>
-<li>作用于容器，进行各种操作。包括初始化，排序，搜索，转换等。</li>
-</ul>
+<li><p>对于字面量数组，若元素中nil会抛出异常，因此更安全。若使用<em>arrayWithObjects:</em>会丢失第一个nil后的元素。</p>
 </li>
-<li>迭代器<ul>
-<li>用于对集合元素进行遍历。</li>
-</ul>
+<li><p>字典，key和value都是object。同样对于内部的值为nil，则会抛出异常。</p>
+</li>
+<li><p>局限性：使用字面量语法创建出的字符串、数组、字典对象都是不可变的。</p>
 </li>
 </ul>
-<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><h3 id="stack"><a href="#stack" class="headerlink" title="stack"></a>stack</h3><ul>
-<li>back()</li>
-<li>push_back()</li>
-<li>pop_back()</li>
+<h2 id="4-多用类型变量，少用-define预处理指令"><a href="#4-多用类型变量，少用-define预处理指令" class="headerlink" title="4.多用类型变量，少用#define预处理指令"></a>4.多用类型变量，少用#define预处理指令</h2><ul>
+<li><p>若常量局限于.m文件，则在前面加上<em>k</em>。若常量在类之外可见，则通常以类名为前缀。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//.m</span><br><span class="line">static const NSTimeInterval kAnimationDuration = 0.3;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>static + const = #define + type</p>
+</li>
+<li><p>若对外公开常量，使用extern在.h中进行声明全局变量，并在相关实现文件中定义其值。这种常量会出现在全局符号表中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// .h</span><br><span class="line">extern NSString *const OCStringConstant;</span><br><span class="line">// .m</span><br><span class="line">NSString *const OCStringConstant = @”Value”; // note: 无static</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>compile: source -&gt; obj; link: obj -&gt; 二进制</p>
+<h2 id="5-用枚举表示状态、选项、状态码"><a href="#5-用枚举表示状态、选项、状态码" class="headerlink" title="5.用枚举表示状态、选项、状态码"></a>5.用枚举表示状态、选项、状态码</h2></li>
+<li><p>Foundation中定义一些辅助的宏。 NS_ENUM 和 NS_OPTIONS</p>
+</li>
+<li><p>若是使用枚举来定义状态机，则最好不要有default分支。这样当新加入分支时，编译器会报警告提示。</p>
+</li>
 </ul>
-<h3 id="queue"><a href="#queue" class="headerlink" title="queue"></a>queue</h3><ul>
-<li>back()</li>
-<li>front()</li>
-<li>push_back()</li>
-<li>pop_back()</li>
+<h1 id="2-对象、消息、运行期"><a href="#2-对象、消息、运行期" class="headerlink" title="2.对象、消息、运行期"></a>2.对象、消息、运行期</h1><h2 id="6-属性"><a href="#6-属性" class="headerlink" title="6.属性"></a>6.属性</h2><ul>
+<li>Java、C++，编译器使用硬编码。当内部的属性发生变化时，必须重新编译</li>
+<li>而OC有稳定的ABI。OC会将实例变量当做一种存储偏移量所用的“特殊变量”。</li>
+<li>property = 实例变量+get+set。</li>
+<li>在.m中定义synthesize变量。</li>
+<li>在.m 中定义dynamic，需要手动实现实例变量， 及get、set方法。</li>
+<li>属性的原子性、读写权限、内存管理语义（assign, strong, weak, unsafe_unretained, copy）、方法名（getter， setter）<ul>
+<li>assign: 纯量类型（基本数据类型）</li>
+<li>strong: 拥有关系。对于设置方法，先保留新值，并释放旧值，最后再将新值设置上去。</li>
+<li>weak: 非拥有关系。set时，既不保留新值，也不释放旧值。在对象遭到摧毁时，属性值自动清空。</li>
+<li>copy: 设置方法不保留新值，而是将其拷贝。</li>
 </ul>
-<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><ul>
-<li>()</li>
-<li>=</li>
-<li>{}</li>
+</li>
+<li>iOS中atomic不能保证“线程安全”</li>
 </ul>
-<h3 id="pair"><a href="#pair" class="headerlink" title="pair"></a>pair</h3><ul>
-<li>成员名：first, second</li>
-<li>构造：make_pair(,)</li>
+<h2 id="7-在对象内部尽量直接访问实例变量"><a href="#7-在对象内部尽量直接访问实例变量" class="headerlink" title="7.在对象内部尽量直接访问实例变量"></a>7.在对象内部尽量直接访问实例变量</h2><ul>
+<li>内部读取数据时，应该通过实例变量；写入数据时，应该通过属性来写。</li>
+<li>初始化及dealloc中，总是应该通过实例变量来读写数据。</li>
+<li>在懒加载初始化中，应该通过属性来读取数据。</li>
 </ul>
-<h3 id="array"><a href="#array" class="headerlink" title="array"></a>array</h3><ul>
-<li>array&lt;int, 3&gt; a = {1, 2, 3}</li>
-<li>size(), sort(a.begin, a.end)</li>
+<h2 id="8-对象等同性"><a href="#8-对象等同性" class="headerlink" title="8.对象等同性"></a>8.对象等同性</h2><ul>
+<li>A == B —&gt; A.hash == B.hash （充分非必要条件）</li>
 </ul>
-<h3 id="priority-queue"><a href="#priority-queue" class="headerlink" title="priority_queue"></a>priority_queue</h3><ul>
-<li>front()</li>
-<li>push_back()</li>
-<li>pop_back()</li>
+<h2 id="9-以“类簇模式”隐藏实现细节"><a href="#9-以“类簇模式”隐藏实现细节" class="headerlink" title="9.以“类簇模式”隐藏实现细节"></a>9.以“类簇模式”隐藏实现细节</h2><ul>
+<li>类簇模式即那个实现细节隐藏在一套简单的公共接口后面。</li>
+<li>系统框架中也经常使用类簇。</li>
+<li>如UIButton，会根据不同的类型进行不同的实现drawRect方法。在抽象基类中利用工厂模式，创建基类的不同步类型，在实体子类中实现相应方法。</li>
+<li>OC中无抽象类的概念，解决方案：1.文档中注明；2.在父类中抛异常。</li>
+<li>大部分Collection类都是“类簇”。NSArray的实例在分配时是一个占位数组，稍后会转为另一个类的实例。，因此不能直接使用 == 进行比较。</li>
 </ul>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://www.runoob.com/cplusplus/cpp-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/cplusplus/cpp-tutorial.html</a></li>
-<li><a href="https://zh.cppreference.com/" target="_blank" rel="noopener">https://zh.cppreference.com/</a></li>
+<h2 id="10-在既有类中使用“关联对象”存放自定义数据"><a href="#10-在既有类中使用“关联对象”存放自定义数据" class="headerlink" title="10.在既有类中使用“关联对象”存放自定义数据"></a>10.在既有类中使用“关联对象”存放自定义数据</h2><ul>
+<li><p>给某个对象关联许多其他对象，通过“key”来区分。类似于NSDictionary。为了一一对应，通常将key设置成全局静态变量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">OBJC_ASSOCIATION_ASSIGN  				assign</span><br><span class="line">OBJC_ASSOCIATION_RETAIN_NONATOMIC		nonatomic, retain</span><br><span class="line">OBJC_ASSOCIATION_COPY_NONATOMIC			nonatomic, copy</span><br><span class="line">OBJC_ASSOCIATION_RETAIN 				reatin</span><br><span class="line">OBJC_ASSOCIATION_COPY 					copy</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>管理对象的方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">void objc_setAssociatedObject(id object, void* key, id value, objc_AssociationPolicy policy)</span><br><span class="line">id objc_getAssociationObject(id object, void* key)</span><br><span class="line">objc_removeAssociationObject(id object)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例如：对于alertView在VC中，可能有多个。如果使用基本代理方法，会将创建视图和触发动作分隔开，并且在代理中要进行判断不同的alert保存多个变量进行判断。可以使用“关联对象”将触发动作代码块与alert进行绑定即可。要注意“循环引用”（note：导入<code>#import &lt;objc/runtime.h&gt;</code>）</p>
+</li>
+<li><p>由于上述可能引起“循环引用”，因此可以采用，定义alert的子类，在子类中将代码块作为子类的属性。将会避免上述的引用问题，会更加稳妥。</p>
+</li>
 </ul>
+<h2 id="11-理解objc-msgSend的作用（消息派发）"><a href="#11-理解objc-msgSend的作用（消息派发）" class="headerlink" title="11.理解objc_msgSend的作用（消息派发）"></a>11.理解objc_msgSend的作用（消息派发）</h2><ul>
+<li><p>C语言使用“静态绑定”，在编译器就已决定运行时所调用的函数。</p>
+</li>
+<li><p>OC的消息机制，调用哪个方法是由运行期决定的。因此是动态的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">id returnValue = [someObject messageName:parameters];</span><br><span class="line">其中 selector = messageName, pars = parameters, obj = someObject;</span><br><span class="line">message = selector + pars;</span><br><span class="line">原型： void objc_msgSend(id self, SEL cmd, ...)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对于上述代码，进行消息转化后：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">id returnValue = objc_msgSend(someObject, </span><br><span class="line">							  @selector(messageName:),</span><br><span class="line">							  parameters);</span><br><span class="line">1. 查找obj的methodslist；</span><br><span class="line">2. 找到就继续执行，否则执行3.</span><br><span class="line">3. 查找其父类；找到就继续执行，否则执行4.</span><br><span class="line">4. 执行message forwarding</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>每个对象都有一个方法列表，key是方法名称，value是该方法的实现。</p>
+</li>
+</ul>
+<h2 id="12-消息转发机制"><a href="#12-消息转发机制" class="headerlink" title="12.消息转发机制"></a>12.消息转发机制</h2><ul>
+<li><p>在上述消息发送出现无法解读消息时，由于动态性，并不会报错，因为会执行消息转发的逻辑</p>
+</li>
+<li><p>有时会出现报错：<code>unrecognized selector sentt to instance 0x..</code>.这个异常是由NSObject的doesNotRecognizeSelector:抛出。出现这个会导致app crash。不过可以编写挂钩执行预定逻辑，从而避免crash。</p>
+</li>
+<li><p>消息转发如下流程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 动态方法解析：+resolveInstanceMethod:(SEL)selector, +resolveClassMethod:(SEL)selector</span><br><span class="line">2. 完整消息转发：找其他接收者：-(id)forwardingTargetForSelector:(SEL)selector;</span><br><span class="line">			   封装NSInvocation给接收者：-(void)forwardingInvocation:(NSInvocation*)invocation;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在上述1的动态消息解析中，添加的方法实现时C语言方法；使用的是<code>class_addMethod(id object, SEL cmd, IMP imp, NSString* type)</code>，其中type的格式是:<code>v: 返回值为void类型；@: 参数/返回值是对象类型；:: SEL类型</code></p>
+</li>
+<li><p>转发越靠后，处理消息代价越大。可以用来模拟@dynamic的实现（p51）</p>
+</li>
+</ul>
+<h2 id="13-方法交换"><a href="#13-方法交换" class="headerlink" title="13.方法交换"></a>13.方法交换</h2><ul>
+<li>通过<code>method_exchangeImplementations(Method method1, Method method2)</code>,可以交换连个方法的实现。</li>
+<li>通常用在debug，该做法不宜滥用。</li>
+</ul>
+<h2 id="14-类对象的内存分布"><a href="#14-类对象的内存分布" class="headerlink" title="14.类对象的内存分布"></a>14.类对象的内存分布</h2><ul>
+<li><p>两大根类（NSObject，NSProxy），都遵循协议NSObject。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//实例对象</span><br><span class="line">typedef struct objc_object &#123;</span><br><span class="line">	Class isa;	</span><br><span class="line">&#125; *id;</span><br><span class="line"></span><br><span class="line">//类对象</span><br><span class="line">typedef struct objc_class *Class;</span><br><span class="line">struct objc_class &#123;</span><br><span class="line">	Class isa;</span><br><span class="line">	Class super_class;</span><br><span class="line">	const char *name;</span><br><span class="line">	long version;</span><br><span class="line">	long info;</span><br><span class="line">	long instance_size;</span><br><span class="line">	struct objc_ivar_list *ivars;</span><br><span class="line">	struct objc_method_list **methodLists;</span><br><span class="line">	struct objc_cache *cache;</span><br><span class="line">	struct objc_protocol_list *protocols;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>尽量使用类型信息查询方法确定对象类型，而不要直接比较。因为某些对象可能实现了消息转发。</p>
+</li>
+</ul>
+<h1 id="3-接口与API设计"><a href="#3-接口与API设计" class="headerlink" title="3.接口与API设计"></a>3.接口与API设计</h1><h2 id="15-用前缀避免命名空间冲突"><a href="#15-用前缀避免命名空间冲突" class="headerlink" title="15.用前缀避免命名空间冲突"></a>15.用前缀避免命名空间冲突</h2><ul>
+<li>给所有名称加上前缀：分类，分类方法，纯C函数，全局变量。</li>
+<li>若app自身和引用的第三方库都引入了同名的第三方库。则需要后者添加前缀避免命名冲突</li>
+</ul>
+<h2 id="16-提供“全能初始化方法”"><a href="#16-提供“全能初始化方法”" class="headerlink" title="16.提供“全能初始化方法”"></a>16.提供“全能初始化方法”</h2><ul>
+<li>designated method</li>
+<li>在OC中，只有发生严重错误时，才应该抛异常。</li>
+<li>若全能初始化与超类中不同，则需要覆写茶类的方法。</li>
+</ul>
+<h2 id="17-实现description"><a href="#17-实现description" class="headerlink" title="17.实现description"></a>17.实现description</h2><ul>
+<li>用于Debug，若想在控制台自定义输出内容，则实现debugDescription。</li>
+</ul>
+<h2 id="18-尽量使用不可变对象"><a href="#18-尽量使用不可变对象" class="headerlink" title="18.尽量使用不可变对象"></a>18.尽量使用不可变对象</h2><ul>
+<li>通常在.h中定义为readonly，在类扩展中定义为readwrite</li>
+<li>不要把可变的collection公开，而是提供相应方法来修改。</li>
+</ul>
+<h2 id="19-使用清晰而协调的命名方式"><a href="#19-使用清晰而协调的命名方式" class="headerlink" title="19.使用清晰而协调的命名方式"></a>19.使用清晰而协调的命名方式</h2><ul>
+<li>方法名通常至少两个单词；属性一个词。</li>
+<li>若方法的返回值是新创建的，方法名首个单词应是返回值的类型。</li>
+<li>不要使用str这种string的简写。get前缀留给那些“输出参数”来保存返回值的方法。</li>
+</ul>
+<h2 id="20-为私有方法名加前缀"><a href="#20-为私有方法名加前缀" class="headerlink" title="20.为私有方法名加前缀"></a>20.为私有方法名加前缀</h2><ul>
+<li>p_XXX</li>
+</ul>
+<h2 id="21-OC的错误模型"><a href="#21-OC的错误模型" class="headerlink" title="21.OC的错误模型"></a>21.OC的错误模型</h2><ul>
+<li>及其情况下抛出异常。如crash、抽象类等。</li>
+<li>在错误不严重情况下，可以使用委托方法。或者“输出参数”。</li>
+</ul>
+<h2 id="22-NSCoping协议"><a href="#22-NSCoping协议" class="headerlink" title="22.NSCoping协议"></a>22.NSCoping协议</h2><ul>
+<li>当前对象是否可变与使用可变还是不可变协议无关。</li>
+<li>Foundation框架中的所有collection类在默认情况下执行浅拷贝。</li>
+</ul>
+<h1 id="4-协议与分类"><a href="#4-协议与分类" class="headerlink" title="4.协议与分类"></a>4.协议与分类</h1><h2 id="23-通过委托与数据源协议进行对象间通信"><a href="#23-通过委托与数据源协议进行对象间通信" class="headerlink" title="23.通过委托与数据源协议进行对象间通信"></a>23.通过委托与数据源协议进行对象间通信</h2><ul>
+<li>如果要向外界公布某类实现了莫协议，则在接口中声明；如果是个委托协议，通常定义在类内部。</li>
+<li>可以借助位段的结构体，将委托对象能否相应某协议方法这一信息缓存。在delegate的set方法中，进行处理<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> didReceiveData		: <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> didFailWithError	: <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> didUpdateProgressTo: <span class="number">1</span>;</span><br><span class="line">&#125; _delegateFlags;</span><br></pre></td></tr></table></figure>
 
+</li>
+</ul>
+<h2 id="24-将类的实现代码分散至多个分类中"><a href="#24-将类的实现代码分散至多个分类中" class="headerlink" title="24.将类的实现代码分散至多个分类中"></a>24.将类的实现代码分散至多个分类中</h2><ul>
+<li>类的基本要素（属性、初始化方法）都声明在“主实现”中。好处便于调试。</li>
+<li>将私有的方法归入名为Private的分类中，以隐藏实现细节。</li>
+</ul>
+<h2 id="25-总是为三方类的分类名称加前缀"><a href="#25-总是为三方类的分类名称加前缀" class="headerlink" title="25.总是为三方类的分类名称加前缀"></a>25.总是为三方类的分类名称加前缀</h2><ul>
+<li>分类中的方法是直接添加在类里面的，类似于固有方法。这一操作是在运行期系统加载分类时完成的。每次添加都会覆盖之前添加的同名方法。多次覆盖的结果以最后一个参与编译的分类为准。</li>
+<li>解决方法：使用命名空间来区分各个分类的名称与其中所定义的方法。</li>
+</ul>
+<h2 id="26-勿在分类中声明属性"><a href="#26-勿在分类中声明属性" class="headerlink" title="26.勿在分类中声明属性"></a>26.勿在分类中声明属性</h2><ul>
+<li>虽然可以使用“关联对象”，但属性通常加在“主接口”中，而且更加清晰。这也是<em>唯一</em>能定义实例变量的地方。</li>
+<li>分类目的在于扩展类功能，而非封装数据。</li>
+<li>有时readonly属性可在分类中使用。但是建议定义为存取方法。</li>
+</ul>
+<h2 id="27-使用类扩展隐藏实现细节"><a href="#27-使用类扩展隐藏实现细节" class="headerlink" title="27.使用类扩展隐藏实现细节"></a>27.使用类扩展隐藏实现细节</h2><ul>
+<li>OC的动态消息系统决定了其不可能实现真正的私有方法或者私有实例变量。</li>
+<li>因为有了“稳固的ABI”，使得我们无需知道对象大小即可使用它。</li>
+<li>编写OC++代码时，类扩展及其有用。</li>
+<li>一般在.h中声明为readonly，在类扩展中声明为readwrite。也可以把私有方法原型定义其中。</li>
+</ul>
+<h2 id="28-通过协议提供匿名对象"><a href="#28-通过协议提供匿名对象" class="headerlink" title="28.通过协议提供匿名对象"></a>28.通过协议提供匿名对象</h2><ul>
+<li>比如delegate属性，他就是个匿名对象，任何遵循该协议的对象都可以充当该属性</li>
+<li>NSDictionary中的key设置时拷贝，值是设置时保留。</li>
+</ul>
+<h1 id="5-内存管理"><a href="#5-内存管理" class="headerlink" title="5.内存管理"></a>5.内存管理</h1><p>ARC几乎把所有内存管理事宜都交由编译器来决定，开发者只需专注于业务逻辑</p>
+<h2 id="29-引用计数"><a href="#29-引用计数" class="headerlink" title="29.引用计数"></a>29.引用计数</h2><ul>
+<li><p>retain, release, autorelease, dealloc</p>
+</li>
+<li><p>属性存取中的顺序很重要</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- (void)setFoo:(id)foo &#123;</span><br><span class="line">	id tmp = [foo retain];</span><br><span class="line">	[_foo release];</span><br><span class="line">	_foo = tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自动释放池，保存将要释放的对象，不会立即释放。释放操作会在清空最外层的自动释放池时执行，除非有自己的自动释放池，否则这个时机是当前线程的下一次事件循环。</p>
+</li>
+</ul>
+<h2 id="30-以ARC简化引用计数"><a href="#30-以ARC简化引用计数" class="headerlink" title="30.以ARC简化引用计数"></a>30.以ARC简化引用计数</h2><ul>
+<li><p>使用ARC时也会执行引用计数，只不过retain与release操作有ARC自动帮你添加处理了。</p>
+</li>
+<li><p>ARC在调用那些retain和release时，直接调用其底层的C语言版本。性能更好，节省更多CPU周期。</p>
+</li>
+<li><p>命名规则：alloc，new，copy，mutablCopy，调用此四种方法的<strong>那段代码</strong>负责释放方法所返回的对象。</p>
+</li>
+<li><p>默认情况下，每个变量都是指向对象的强引用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">// 由于方法名没有包含上述内容，所有由personWithName:内部自动管理内存；</span><br><span class="line">_myPerson = [Person personWithName:@&quot;abc&quot;]; </span><br><span class="line"></span><br><span class="line">// 上述对应的ARC优化的代码如下：</span><br><span class="line">Person *tmp = [Person personWithName:@&quot;abc&quot;];</span><br><span class="line">_myPerson = objc_retainAutoreleasedReturnValue(tmp);</span><br><span class="line"></span><br><span class="line">// Person.m</span><br><span class="line">+ (Person *)personWithName:(NSString*)name &#123;</span><br><span class="line">	Person *p = [[self alloc] init];</span><br><span class="line">	p.name = name;</span><br><span class="line">	objc_autoreleaseReturnValue(person);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">id objc_autoreleaseReturnValue(id object) &#123;</span><br><span class="line">	if ( /* 在之后的代码会retain对象 */) &#123;</span><br><span class="line">		set_flag(object);</span><br><span class="line">		return object;</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		return [object autorelease];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">id objc_retainAutoreleasedRetrunValue(id object) &#123;</span><br><span class="line">	if (get_flag(object)) &#123;</span><br><span class="line">		clear_flag(object);</span><br><span class="line">		return object;</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">		return [object retain];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ARC只负责管理OC对象。CoreFoundation对象不归ARC管理，开发者必须适时调用CFRetain/CFRelease.</p>
+</li>
+</ul>
+<h2 id="31-dealloc方法中释放引用并解除监听"><a href="#31-dealloc方法中释放引用并解除监听" class="headerlink" title="31.dealloc方法中释放引用并解除监听"></a>31.dealloc方法中释放引用并解除监听</h2><ul>
+<li>dealloc中做的事情：释放非OC对象的引用，取消订阅的KVO或者NSNotification等通知，不要做其他事情</li>
+<li>异步任务方法不应在dealloc调用，因为此时对象已经处于回收状态。</li>
+</ul>
+<h2 id="32-编写“异常安全代码”时注意留意内存管理问题"><a href="#32-编写“异常安全代码”时注意留意内存管理问题" class="headerlink" title="32.编写“异常安全代码”时注意留意内存管理问题"></a>32.编写“异常安全代码”时注意留意内存管理问题</h2><ul>
+<li><p>异常只应在发生严重错误时抛出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@try &#123;&#125;</span><br><span class="line">@catch &#123;&#125;</span><br><span class="line">@finally &#123;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>OC默认情况下不开启处理异常的附加代码，可以设置-fobjc-arc-exceptions标志位进行开启。而OC++下会默认开启</p>
+</li>
+<li><p>如果发现大量异常捕获操作时，需要重构代码</p>
+</li>
+</ul>
+<h2 id="33-以弱引用避免保留环"><a href="#33-以弱引用避免保留环" class="headerlink" title="33.以弱引用避免保留环"></a>33.以弱引用避免保留环</h2><ul>
+<li>保留环会导致内存泄漏</li>
+<li>weak = unsafe_unretained + nil</li>
+</ul>
+<h2 id="34-以“自动释放池块”降低内存峰值"><a href="#34-以“自动释放池块”降低内存峰值" class="headerlink" title="34.以“自动释放池块”降低内存峰值"></a>34.以“自动释放池块”降低内存峰值</h2><ul>
+<li>线程默认都有自动释放池，每次执行“事件循环”时，会将其清空。(在退出runloop/休眠时)</li>
+<li>不要提前优化内存。首先检测内存用量。</li>
+<li>MRC时NSAutoreleasePool对象，重量级；ARC时<code>@autoreleasepool{}</code>,更轻量。</li>
+</ul>
+<h2 id="35-用“僵尸对象”调试内存管理问题"><a href="#35-用“僵尸对象”调试内存管理问题" class="headerlink" title="35.用“僵尸对象”调试内存管理问题"></a>35.用“僵尸对象”调试内存管理问题</h2><ul>
+<li>利用的是消息转发机制。系统会修改对象的isa指针为特殊的僵尸类。</li>
+</ul>
+<h2 id="36-不要使用retainCount"><a href="#36-不要使用retainCount" class="headerlink" title="36.不要使用retainCount"></a>36.不要使用retainCount</h2><ul>
+<li>retainCount是MRC的产物，在ARC下不可用。</li>
+<li>返回的计数是某个时间点的值，为考虑系统会稍后把自动释放池清空。</li>
+</ul>
+<h1 id="6-块与大中枢派发"><a href="#6-块与大中枢派发" class="headerlink" title="6.块与大中枢派发"></a>6.块与大中枢派发</h1><h2 id="37-理解“块”"><a href="#37-理解“块”" class="headerlink" title="37.理解“块”"></a>37.理解“块”</h2><ul>
+<li><p>首先“块”与“GCD”毫无关系，他们只是在一起配合使用，仅此而已。</p>
+</li>
+<li><p>block语法类似于C中的函数指针</p>
+</li>
+<li><p>默认，block捕获的外部变量无法在块里修改；但是可以添加<strong>block来修改。block总能修改实例变量，而不需添加</strong>block。</p>
+</li>
+<li><p>block本身是一个<strong>对象</strong>。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">block</span> &#123;</span></span><br><span class="line">	<span class="keyword">void</span> *isa;</span><br><span class="line">	<span class="keyword">int</span> flags;</span><br><span class="line">	<span class="keyword">int</span> reserved;</span><br><span class="line">	<span class="keyword">void</span> (*)(<span class="keyword">void</span> *,...) invoke; <span class="comment">// 块实现代码</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> *<span class="title">descriptor</span>;</span>		     <span class="comment">// 快描述符</span></span><br><span class="line">	捕获到的变量		<span class="comment">//浅拷贝</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">descriptor</span> &#123;</span></span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">int</span> reserved;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">int</span> size;</span><br><span class="line">	<span class="keyword">void</span> (*)(<span class="keyword">void</span> *, <span class="keyword">void</span> *) copy;   	<span class="comment">// 保留捕获的对象</span></span><br><span class="line">	<span class="keyword">void</span> (*)(<span class="keyword">void</span> *, <span class="keyword">void</span> *) dispose; 	<span class="comment">// 释放对象</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>定义块时，所占内存区域是分配在栈中的，通过 copy可将其移动到堆中。</p>
+</li>
+</ul>
+<h2 id="38-为常用的block类型创建typedef"><a href="#38-为常用的block类型创建typedef" class="headerlink" title="38.为常用的block类型创建typedef"></a>38.为常用的block类型创建typedef</h2><ul>
+<li>好处，重构块的类型签名时方便</li>
+<li>给同一个块类型签名创建多个别名。在非继承体系中，使用多个名称；在继承中，在根类定义使用同一个。</li>
+</ul>
+<h2 id="39-用handler块降低代码分散程度"><a href="#39-用handler块降低代码分散程度" class="headerlink" title="39.用handler块降低代码分散程度"></a>39.用handler块降低代码分散程度</h2><ul>
+<li>“系统监控器”在发现某个App的抓线程阻塞了一算时间之后，会令其终止。</li>
+<li>委托缺点：如果类中有多个获取器下载不同数据，得在delegate方法中根据传入的参数来切换。这样代码激增；增加实例变量；代码松散。</li>
+<li>可以将其单独封装在block块内部。例如将成功与失败逻辑封装在同一个block内。苹果莫斯也是这样设计API的。</li>
+</ul>
+<h2 id="40-用块引用其所属对象时不要出现保留环"><a href="#40-用块引用其所属对象时不要出现保留环" class="headerlink" title="40.用块引用其所属对象时不要出现保留环"></a>40.用块引用其所属对象时不要出现保留环</h2><ul>
+<li>一定要找合适时机解除保留环，而不能把责任丢给API调用者。</li>
+</ul>
+<h2 id="41-多用派发队列，少用同步锁"><a href="#41-多用派发队列，少用同步锁" class="headerlink" title="41.多用派发队列，少用同步锁"></a>41.多用派发队列，少用同步锁</h2><ul>
+<li>同步块：<code>@synchronized() {}</code>,在代码结尾处，释放锁。另一个是<code>NSLock</code>；递归锁<code>NSRecursiveLock</code>线程能够多次持有该锁，而不会出现死锁现象。</li>
+<li>可使用“串行同步队列”，或者“并发队列”+barrier实现并发读，顺序写操作。</li>
+</ul>
+<h2 id="42-多用GCD，少用performSelector系列方法"><a href="#42-多用GCD，少用performSelector系列方法" class="headerlink" title="42.多用GCD，少用performSelector系列方法"></a>42.多用GCD，少用performSelector系列方法</h2><ul>
+<li>performSlector缺点：局限性大。参数类型少，返回值参数均为id类型。容易出现内存泄漏问题。如动态绑定多个selector。</li>
+<li>若是把任务放到其他线程，可以使用GCD。</li>
+</ul>
+<h2 id="43-掌握GCD及操作队列的使用时机"><a href="#43-掌握GCD及操作队列的使用时机" class="headerlink" title="43.掌握GCD及操作队列的使用时机"></a>43.掌握GCD及操作队列的使用时机</h2><ul>
+<li>GCD：同步机制，dispatch_once，dispatch_group，barrier…</li>
+<li>队列：后台任务，cancel，dependency，KVO，优先级，重用NSOperation对象</li>
+<li>GCD的优先级对象是队列，而不是对于block来说。</li>
+</ul>
+<h2 id="44-通过Dispatch-Group机制，根据系统资源状态来执行任务"><a href="#44-通过Dispatch-Group机制，根据系统资源状态来执行任务" class="headerlink" title="44.通过Dispatch Group机制，根据系统资源状态来执行任务"></a>44.通过Dispatch Group机制，根据系统资源状态来执行任务</h2><ul>
+<li>group.enter(), group.leave()成对出现， group.notify()/group.wait()</li>
+<li>dispatch_apply可以代替for，不过它会持续阻塞，直至所有任务都执行完毕。</li>
+<li>将块派给当前队列，则会出现死锁。可使用dispatch group执行后台任务。</li>
+</ul>
+<h2 id="45-使用dispatch-once执行只需运行一次的线程安全代码"><a href="#45-使用dispatch-once执行只需运行一次的线程安全代码" class="headerlink" title="45.使用dispatch_once执行只需运行一次的线程安全代码"></a>45.使用dispatch_once执行只需运行一次的线程安全代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+ (id) sharedInstance &#123;</span><br><span class="line">	static Person *sharedInstance = nil;</span><br><span class="line">	static dispatch_once_t token;</span><br><span class="line">	dispatch_once_token(&amp;token, ^&#123;</span><br><span class="line">		sharedInstance = [[self alloc] init];</span><br><span class="line">	&#125;);</span><br><span class="line">	return sharedInstace;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="46-不要使用dispatch-get-current-queue"><a href="#46-不要使用dispatch-get-current-queue" class="headerlink" title="46.不要使用dispatch_get_current_queue"></a>46.不要使用dispatch_get_current_queue</h2><h1 id="7-系统框架"><a href="#7-系统框架" class="headerlink" title="7.系统框架"></a>7.系统框架</h1><h2 id="47-熟悉系统框架"><a href="#47-熟悉系统框架" class="headerlink" title="47.熟悉系统框架"></a>47.熟悉系统框架</h2><ul>
+<li>框架：将一系列代码封装为动态库，并在其中放入描述其接口的头文件。</li>
+<li>iOS的三方框架使用的是静态库。iOS应用程序不允许在其中包含动态库。</li>
+</ul>
+<h2 id="48-多用块枚举，少用for循环"><a href="#48-多用块枚举，少用for循环" class="headerlink" title="48.多用块枚举，少用for循环"></a>48.多用块枚举，少用for循环</h2><h2 id="49-对自定义其内存管理语义的collection使用无缝桥接"><a href="#49-对自定义其内存管理语义的collection使用无缝桥接" class="headerlink" title="49.对自定义其内存管理语义的collection使用无缝桥接"></a>49.对自定义其内存管理语义的collection使用无缝桥接</h2><ul>
+<li>将NSArray–&gt; CFArrayRef；<code>__bridge</code>：ARC仍旧具有OC对象的所有权。<code>__bridge_retain</code>会使ARC交出对象所有权。</li>
+<li>将CFArrayRef –&gt; NSArray；<code>__bridge_transfer</code>.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">NSArray *arr = @[@1, @2, @3];</span><br><span class="line">CFArrayRef cfArr = (__bridge CFArrayRef)arr;</span><br><span class="line">NSLog(@&quot;size = %li&quot;, CFArrayGetCount(cfArr));</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="50-构建缓存时选用NSCache而非NSDictionary"><a href="#50-构建缓存时选用NSCache而非NSDictionary" class="headerlink" title="50.构建缓存时选用NSCache而非NSDictionary"></a>50.构建缓存时选用NSCache而非NSDictionary</h2><ul>
+<li>NSDictionary：key是copy，value是retain；</li>
+<li>NSCache：key、value均是retain；线程安全<code>setObject:forKey:cost:</code>.</li>
+</ul>
+<h2 id="51-精简intialize和load实现代码"><a href="#51-精简intialize和load实现代码" class="headerlink" title="51.精简intialize和load实现代码"></a>51.精简intialize和load实现代码</h2><ul>
+<li><p>对于加入运行期系统中的每个类和分类，必定会调用load，而且仅调用一次。顺序：类 –&gt; 分类；load并不遵从继承体系。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ (void)load</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>程序首次用该类之前调用且只调用一次initialize；惰性调用，只有执行该方法的那个线程可以操作类或者类实例；如果某个类未实现该方法，会调用超类的代码。父类 –&gt; 子类；</p>
+</li>
+<li><p>initialize尽量精简原因：不要执行耗时太久或需要加锁任务；开发者无法控制类的初始化时机；可能相互引用操作错误，迫使其初始化。该方法只应该用来设置内部数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ (void)initialize</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>整数可以编译期定义，而OC对象不可以（可以放在initialize中）。所以创建实例前必须先激活运行期系统。但除了NSString。</p>
+</li>
+</ul>
+<h2 id="52-别忘了NSTimer会保留其目标对象"><a href="#52-别忘了NSTimer会保留其目标对象" class="headerlink" title="52.别忘了NSTimer会保留其目标对象"></a>52.别忘了NSTimer会保留其目标对象</h2>
       
 
       
@@ -252,7 +496,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
         		</li>
       		
 		</ul>
@@ -308,7 +552,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/27/C-Grammer/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/10/Effective-OC-Note/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -322,18 +566,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/27/data-structure-base/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          数据结构基础知识总结
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/27/Design-Patterns-Diagram/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">设计模式类图</div>
+    <a href="/2019/08/27/data-structure-base/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构基础知识总结</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -380,7 +615,7 @@ if(true){
   	repo: 'dongpoRen.github.io',
   	owner: 'dongpoRen',
   	admin: ['dongpoRen'],
-  	id: 'Tue Aug 27 2019 16:57:29 GMT+0800',
+  	id: 'Thu Oct 10 2019 02:21:05 GMT+0800',
   	distractionFreeMode: 'true'
 })
 gitalk.render('gitalk-container') 

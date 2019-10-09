@@ -148,6 +148,91 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Effective-OC-Note" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/10/Effective-OC-Note/">Effective Objective-C 2.0 note</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/10/Effective-OC-Note/" class="archive-article-date">
+  	<time datetime="2019-10-09T18:21:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
+</a>    
+    
+    
+     
+ 
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-基础"><a href="#1-基础" class="headerlink" title="1.基础"></a>1.基础</h1><h2 id="1-OC起源"><a href="#1-OC起源" class="headerlink" title="1.OC起源"></a>1.OC起源</h2><ul>
+<li><strong>消息结构</strong>语言，运行环境决定运行时代码</li>
+<li><strong>函数结构</strong>语言，有编译器决定</li>
+<li>OC的工作有<em>运行期组件</em>而非编译器来完成</li>
+<li>OC语言中指针用来指示对象，对象内存总是分配在<code>堆空间</code>，堆内存使用”引用计数”管理</li>
+<li>分配在堆中的内存直接管理，分配在栈上的保存变量的内存会在其栈帧弹出时，自动清理。</li>
+<li>OC使用<strong>动态绑定</strong>的消息结构，在运行时才会检查对象类型。</li>
+<li>发送消息时，如何执行由运行环境而非编译器决定。</li>
+</ul>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">iOS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/10/Effective-OC-Note/">查看更多 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-data-structure-base" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -759,107 +844,6 @@
 
 
   
-    <article id="post-source-code-mjrefresh-note" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/20/source-code-mjrefresh-note/">MJRefresh记录</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/20/source-code-mjrefresh-note/" class="archive-article-date">
-  	<time datetime="2019-08-20T06:58:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
-</a>    
-    
-    
-     
- 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>写这篇文章主要有两个目的：</p>
-<ol>
-<li>虽然refresh的源码已经有很多小伙伴分析过了。但是其应用不能说不够广阔。所以，抽空重新梳理了一下该源码，然后记录一下自己的心得。方便之后重新阅读，然后对比更新。</li>
-<li>另一个问题是发现一个阅读源码的现象：比如源码有100个文件，当阅读了10个文件，就说我阅读过某某某框架的源码，然后看到源码中某某方法和另一方法实现一致，然后就直接调用同一个方法。但是此时就很容易出现问题。有时和你理论的时候，依旧意识不到问题所在，继续翻开源码说实现是一致的。可源码整体看一下，就能发现遇到的问题。最后一种情况将会分析这遇到的问题。</li>
-</ol>
-<hr>
-<p>本文从以下几个方面进行记录：</p>
-<ul>
-<li>继承层次</li>
-<li>整体分析</li>
-<li>各类的职责</li>
-<li>下拉刷新<ul>
-<li>主动调用代码</li>
-<li>UI进行交互</li>
-</ul>
-</li>
-<li>上拉刷新</li>
-<li>常见的错误❌</li>
-</ul>
-<hr>
-<h4 id="一、基本类继承层次关系"><a href="#一、基本类继承层次关系" class="headerlink" title="一、基本类继承层次关系"></a>一、基本类继承层次关系</h4>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">source</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mj</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/20/source-code-mjrefresh-note/">查看更多 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -962,11 +946,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">UML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Swift</a>
+                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1006,10 +994,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">iOS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">指针</a>
               </li>
              
@@ -1018,15 +1002,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">category</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">source</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mj</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">category</a>
               </li>
             
             <div class="clearfix"></div>
